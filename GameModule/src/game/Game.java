@@ -3,12 +3,14 @@ package game;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
+import static game.ColorEnums.*;
+
 public class Game {
-    public static final String RED_TEXT = "\u001B[41m";
-    public static final String RESET_TEXT = "\u001B[0m";
-    public static final String GREEN_TEXT = "\u001B[42m";
-    public static final String YELLOW_TEXT = "\u001B[43m";
-    public static final String BLUE_TEXT = "\u001B[44m";
+
+    public static void execute() throws InterruptedException {
+        asciiArt();
+        welcome();
+    }
 
 
     // ASCII Art method
