@@ -9,4 +9,5 @@ public class ColorEnums {
     public static final String PURPLE_TEXT = "\u001B[45m";
     public static final String CYAN_TEXT = "\u001B[46m";
     public static final String WHITE_TEXT = "\u001B[47m";
+
 }
