@@ -11,7 +11,7 @@ class FourSwitchPuzzle {
         switches[3] = false;
     }
 
-    void toggleSwitch(int index) {
+    void puzzleAction(int index) {
         if (index == 0) {
             switches[0] = !switches[0];
         }

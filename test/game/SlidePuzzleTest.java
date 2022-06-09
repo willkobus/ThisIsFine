@@ -3,8 +3,6 @@ package game;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Arrays;
-
 import static org.junit.Assert.*;
 
 public class SlidePuzzleTest {
@@ -18,19 +16,19 @@ public class SlidePuzzleTest {
     @Test
     public void move_validChoices() {
         System.out.println(puzzle.toString());
-        puzzle.move(6);
+        puzzle.puzzleAction(6);
         System.out.println(puzzle.toString());
-        puzzle.move(5);
+        puzzle.puzzleAction(5);
         System.out.println(puzzle.toString());
-        puzzle.move(4);
+        puzzle.puzzleAction(4);
         System.out.println(puzzle.toString());
-        puzzle.move(1);
+        puzzle.puzzleAction(1);
         System.out.println(puzzle.toString());
     }
 
     @Test
     public void checkSolved_shouldReturnFalse() {
-        puzzle.move(6);
+        puzzle.puzzleAction(6);
 
         assertFalse(puzzle.isSolved());
     }
@@ -38,9 +36,9 @@ public class SlidePuzzleTest {
     @Test
     public void checkSolved_shouldReturnTrue() {
         System.out.println(puzzle.toString());
-        puzzle.move(6);
+        puzzle.puzzleAction(6);
         System.out.println(puzzle.toString());
-        puzzle.move(6);
+        puzzle.puzzleAction(6);
         System.out.println(puzzle.toString());
 
         assertTrue(puzzle.isSolved());
@@ -48,12 +46,18 @@ public class SlidePuzzleTest {
 
     @Test
     public void move_outOfBoundsChoice_shouldReturnFalse() {
-        assertFalse(puzzle.move(9));
+        assertFalse(puzzle.puzzleAction(9));
     }
 
     @Test
     public void move_nonAdjacentChoice_shouldReturnFalse() {
-        assertFalse(puzzle.move(2));
+        assertFalse(puzzle.puzzleAction(2));
+    }
+
+    @Test
+    public void shuffle() {
+        puzzle = new SlidePuzzle(5);
+        System.out.println(puzzle.toString());
     }
 
     @Test

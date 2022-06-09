@@ -1,6 +1,5 @@
 package game;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -11,9 +10,9 @@ public class SwitchPuzzleTest {
     public void eightSwitch_toggleSwitch() {
         EightSwitchPuzzle eightPuzzle = new EightSwitchPuzzle();
 
-        eightPuzzle.toggleSwitch(0);
-        eightPuzzle.toggleSwitch(2);
-        eightPuzzle.toggleSwitch(5);
+        eightPuzzle.puzzleAction(0);
+        eightPuzzle.puzzleAction(2);
+        eightPuzzle.puzzleAction(5);
 
         assertTrue(eightPuzzle.isSolved());
     }
@@ -28,8 +27,8 @@ public class SwitchPuzzleTest {
     public void fiveSwitch_toggleSwitch() {
         FiveSwitchPuzzle fivePuzzle = new FiveSwitchPuzzle();
 
-        fivePuzzle.toggleSwitch(2);
-        fivePuzzle.toggleSwitch(3);
+        fivePuzzle.puzzleAction(2);
+        fivePuzzle.puzzleAction(3);
 
         assertTrue(fivePuzzle.isSolved());
     }
@@ -44,11 +43,11 @@ public class SwitchPuzzleTest {
     public void fourSwitch_toggleSwitch() {
         FourSwitchPuzzle fourPuzzle = new FourSwitchPuzzle();
 
-        fourPuzzle.toggleSwitch(2);
-        fourPuzzle.toggleSwitch(2);
+        fourPuzzle.puzzleAction(2);
+        fourPuzzle.puzzleAction(2);
 
-        fourPuzzle.toggleSwitch(1);
-        fourPuzzle.toggleSwitch(0);
+        fourPuzzle.puzzleAction(1);
+        fourPuzzle.puzzleAction(0);
 
         assertTrue(fourPuzzle.isSolved());
     }

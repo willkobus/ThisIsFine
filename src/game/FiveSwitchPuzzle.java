@@ -11,7 +11,7 @@ class FiveSwitchPuzzle {
         }
     }
 
-    void toggleSwitch(int index) {
+    void puzzleAction(int index) {
         switches[index] = !switches[index];
         if (index >= 3) {
             index -= 5;

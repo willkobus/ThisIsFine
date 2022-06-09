@@ -15,22 +15,35 @@ class SlidePuzzle {
             grid.add(i + 1);
             grid.sort(null);
         }
+
+        this.puzzleAction(6);
+        this.puzzleAction(5);
+        this.puzzleAction(4);
+        this.puzzleAction(1);
     }
 
     public SlidePuzzle(int moves) {
         grid = new ArrayList<>(gridSize);
 
         for (int i = 0; i < gridSize; i++) {
-            grid.set(i, i + 1);
+            grid.add(i + 1);
+            grid.sort(null);
         }
 
         shuffle(moves);
     }
 
     private void shuffle(int count) {
+        int start = 0;
+        while (start < count) {
+            int rand = (int)(Math.random() * 8) + 1;
+            if (puzzleAction(rand)) {
+                start++;
+            }
+        }
     }
 
-    public boolean move(int target) {
+    public boolean puzzleAction(int target) {
         boolean successResult = false;
         if (target < 0 || target > 9) {
             return false;
@@ -44,6 +57,7 @@ class SlidePuzzle {
             int targetIndex = grid.indexOf(target);
             grid.set(grid.indexOf(gridSize), grid.get(targetIndex));
             grid.set(targetIndex, gridSize);
+            successResult = true;
         }
 
         solved = checkSolved();
@@ -99,12 +113,11 @@ class SlidePuzzle {
         boolean isSolved = true;
 
         for (int i = 0; i < gridSize; i++) {
-            //System.out.println(grid.get(i) + "  " + (i + 1));
             if (grid.get(i) != i + 1) {
                 isSolved = false;
             }
         }
-        System.out.println();
+
         return isSolved;
     }
 
