@@ -35,11 +35,10 @@ public class SlidePuzzleTest {
 
     @Test
     public void checkSolved_shouldReturnTrue() {
-        System.out.println(puzzle.toString());
+        puzzle.puzzleAction(1);
+        puzzle.puzzleAction(4);
+        puzzle.puzzleAction(5);
         puzzle.puzzleAction(6);
-        System.out.println(puzzle.toString());
-        puzzle.puzzleAction(6);
-        System.out.println(puzzle.toString());
 
         assertTrue(puzzle.isSolved());
     }
@@ -51,7 +50,7 @@ public class SlidePuzzleTest {
 
     @Test
     public void move_nonAdjacentChoice_shouldReturnFalse() {
-        assertFalse(puzzle.puzzleAction(2));
+        assertFalse(puzzle.puzzleAction(3));
     }
 
     @Test
