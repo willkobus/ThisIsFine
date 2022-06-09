@@ -31,6 +31,12 @@ class ActionParser {
                     case "use":
                         validInput = moveExecution.use(moveString[1]);
                         break;
+                    case "look":
+                        validInput = moveExecution.look(player);
+                        break;
+                    case "restart":
+                        validInput = moveExecution.restart(player);
+                        break;
                     case "quit":
                         quit = true;
                         validInput = true;
