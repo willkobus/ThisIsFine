@@ -1,6 +1,6 @@
 package game;
 
-import game.TextParser;
+
 import org.junit.Before;
 
 import static org.junit.Assert.*;
