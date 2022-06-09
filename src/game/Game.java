@@ -13,6 +13,7 @@ public class Game {
     public void execute() throws Exception {
         asciiArt();
         welcome();
+        gameRules();
 
 //        while(start());
         boolean quit = false;
@@ -33,6 +34,24 @@ public class Game {
 
          */
 
+    }
+
+    // Game Rules
+    public static void gameRules() {
+        System.out.println("===============================================================================================");
+        System.out.println("GAME RULES: \n" +
+                "Type a " + BLUE_TEXT + "verb"+ RESET_TEXT + " and a "+ BLUE_TEXT + "noun"  + RESET_TEXT + ".\n" +
+                "Here are the options for verbs and how you use them: \n" +
+                "\t1. take <item>\n" +
+                "\t2. use <item>\n" +
+                "\t3. move <direction> (east, west, north, south)\n" +
+                "\t4. look (gives more detail about the current room)\n" +
+                "\t5. quit (exits game)\n" +
+                "\t6. restart (restarts new game, loses all current settings)\n\n" +
+                "Goal: Go to different rooms, solve the puzzles and get the keys to escape the burning building. \n" +
+                "      REMEMBER, you have to finish this task within 100 steps. Otherwise ...");
+
+        System.out.println("===============================================================================================");
     }
 
     // ASCII Art method
