@@ -12,7 +12,7 @@ class EightSwitchPuzzle {
         }
     }
 
-    void toggleSwitch(int index) {
+    void puzzleAction(int index) {
         if (index == 0) {
             switches[7] = !switches[7];
         }
@@ -42,6 +42,7 @@ class EightSwitchPuzzle {
 
         return isSolved;
     }
+
 
     public boolean isSolved() {
         return solved;
