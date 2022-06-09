@@ -13,7 +13,7 @@ public class Game {
     public void execute() throws Exception {
         asciiArt();
         welcome();
-        gameRules();
+        gameRules() ;
 
 //        while(start());
         boolean quit = false;
