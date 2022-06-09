@@ -4,7 +4,7 @@ import org.json.simple.JSONObject;
 
 class Moves {
 
-    public void move(Player player, String direction) throws Exception {
+    public boolean move(Player player, String direction) throws Exception {
         JSONRead jsonReader = new JSONRead();
         JSONObject room = jsonReader.readJSON();
 //        System.out.println("You have moved " + direction);
@@ -12,6 +12,7 @@ class Moves {
         System.out.println(currentRoom.get("name"));
         String destRoom;
         JSONObject newRoom;
+
         if (currentRoom.containsKey(direction)) {
             destRoom = (String) currentRoom.get(direction);
             player.setCurrentRoom(destRoom);
@@ -19,19 +20,20 @@ class Moves {
             System.out.println("You are now in the: " + player.getCurrentRoom());
             System.out.println(((JSONObject) room.get(player.getCurrentRoom())).get("description"));
 
-            //System.out.println(room);
-            //System.out.println(room.get("description"));
+            return true;
         } else {
             System.out.println("No exit in that direction");
-
+            return false;
         }
     }
 
-    public void take(String item){
+    public boolean take(String item){
         System.out.println("You have picked up " + item);
+        return true;
     }
 
-    public void use(String item){
+    public boolean use(String item){
         System.out.println("You have used " + item);
+        return true;
     }
 }
