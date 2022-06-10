@@ -10,7 +10,6 @@ class Moves {
         JSONObject room = jsonReader.readJSON();
         JSONObject currentRoom = (JSONObject) room.get(player.getCurrentRoom());
 
-        System.out.println(currentRoom.get("name"));
         String destRoom;
 
         if (currentRoom.containsKey(direction)) {
@@ -19,22 +18,25 @@ class Moves {
 
             moveCount ++;
             player.setMoveCount(moveCount);
-            roomInfo(player);
+            player.playerInfo(player);
 
             return true;
         } else {
             System.out.println("No exit in that direction");
+            player.playerInfo(player);
             return false;
         }
     }
 
-    public boolean take(String item){
+    public boolean take(Player player, String item) throws Exception{
         System.out.println("You have picked up " + item);
+        player.playerInfo(player);
         return true;
     }
 
-    public boolean use(String item){
+    public boolean use(Player player,String item) throws Exception{
         System.out.println("You have used " + item);
+        player.playerInfo(player);
         return true;
     }
 
@@ -45,22 +47,16 @@ class Moves {
         System.out.println(currentRoom.get("detailed"));
         System.out.println();
 
-        roomInfo(player);
+        player.playerInfo(player);
+
         return true;
     }
 
-    private void roomInfo(Player player) throws Exception{
-        JSONObject room = jsonReader.readJSON();
-        JSONObject currentRoom = (JSONObject) room.get(player.getCurrentRoom());
-        System.out.println("Move Total: " + player.getMoveCount());
-        System.out.println("You are in the: " + player.getCurrentRoom() + ". " + currentRoom.get("description"));
-        System.out.println("Items in room: " + currentRoom.get("items"));
-        System.out.println(currentRoom.get("exits"));
-    }
-
     public boolean restart(Player currentPlayer) throws Exception{
+        System.out.println();
+        System.out.println("New Game started. Move counter and inventory reset, and you have been returned to the starting area\n");
         currentPlayer = new Player();
-        roomInfo(currentPlayer);
+        currentPlayer.playerInfo(currentPlayer);
         return true;
     }
 }
