@@ -87,7 +87,7 @@ public class Game {
         Thread.sleep(delay);
         System.out.println("are conducting a study to see how well people solve problems when faced with a stressful situation. In your case it seems you are in situation #4352, ");
         Thread.sleep(delay);
-        System.out.println(RED_TEXT + "“Escape the Burning Building”" + RESET_TEXT + ". In this scenario you have to solve puzzles and complete tasks in order to get all the keys and escape the building ");
+        System.out.println(RED_TEXT + "'Escape the Burning Building'" + RESET_TEXT + ". In this scenario you have to solve puzzles and complete tasks in order to get all the keys and escape the building ");
         Thread.sleep(delay);
         System.out.println("in a set number of moves. How many moves you ask? Well, to keep you good and stressed, you don’t get to know that! Don’t worry though, we will give ");
         Thread.sleep(delay);
