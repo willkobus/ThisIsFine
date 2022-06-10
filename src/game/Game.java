@@ -15,24 +15,13 @@ public class Game {
         welcome();
         gameRules();
 
-//        while(start());
-        boolean quit = false;
-
-        while(!quit) {
-            quit = actionParser.playerMove(player);
-        }
-
+        while(start());
 
     }
 
     private boolean start() throws Exception {
+        player.playerInfo(player);
         return !actionParser.playerMove(player);
-
-        /*
-        while !quit
-            quit = actionparser.playermove(player)
-
-         */
 
     }
 

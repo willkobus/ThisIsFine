@@ -11,8 +11,7 @@ class ActionParser {
     private TextParser parser = new TextParser();
     private Moves moveExecution = new Moves();
 
-
-    public boolean playerMove(Player player) throws Exception{
+        public boolean playerMove(Player player) throws Exception{
         boolean quit = false;
 
         while (!quit) {
@@ -26,10 +25,10 @@ class ActionParser {
                         validInput = moveExecution.move(player, moveString[1].toLowerCase());
                         break;
                     case "take":
-                        validInput = moveExecution.take(moveString[1]);
+                        validInput = moveExecution.take(player, moveString[1]);
                         break;
                     case "use":
-                        validInput = moveExecution.use(moveString[1]);
+                        validInput = moveExecution.use(player, moveString[1]);
                         break;
                     case "look":
                         validInput = moveExecution.look(player);
@@ -51,9 +50,4 @@ class ActionParser {
         return quit;
     }
 
-    public static void main(String[] args) throws Exception{
-        ActionParser moveSelector = new ActionParser();
-        Player player = new Player();
-        moveSelector.playerMove(player);
-    }
 }

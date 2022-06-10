@@ -1,8 +1,11 @@
 package game;
 
+import org.json.simple.JSONObject;
+
 import java.util.ArrayList;
 
 class Player {
+    private JSONRead jsonReader = new JSONRead();
     private String currentRoom;
     private ArrayList<String> inventory;
     private int moveCount;
@@ -36,5 +39,19 @@ class Player {
 
     public void setMoveCount(int moveCount) {
         this.moveCount = moveCount;
+    }
+
+    public void addToInventory(String item){
+        inventory.add(item);
+    }
+
+    public void playerInfo(Player player) throws Exception{
+        JSONObject room = jsonReader.readJSON();
+        JSONObject currentRoom = (JSONObject) room.get(player.getCurrentRoom());
+        System.out.println("Move Total: " + player.getMoveCount());
+        System.out.println("You are in the: " + player.getCurrentRoom() + ". " + currentRoom.get("description"));
+        System.out.println("Your Inventory: " + player.getInventory());
+        System.out.println("Items in room: " + currentRoom.get("items"));
+        System.out.println(currentRoom.get("exits"));
     }
 }
