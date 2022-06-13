@@ -1,5 +1,7 @@
 package game;
 
+import game.actions.*;
+
 import java.util.Scanner;
 
 class ActionParser {
@@ -9,9 +11,8 @@ class ActionParser {
 
     private Scanner scanner = new Scanner(System.in);
     private TextParser parser = new TextParser();
-    private Moves moveExecution = new Moves();
-
-        public boolean playerMove(Player player) throws Exception{
+    
+    public boolean playerMove(Player player) throws Exception{
         boolean quit = false;
 
         while (!quit) {
@@ -22,19 +23,19 @@ class ActionParser {
                 moveChoice = moveString[0].toLowerCase();
                 switch (moveChoice) {
                     case "move":
-                        validInput = moveExecution.move(player, moveString[1].toLowerCase());
+                        validInput = Move.move(player, moveString[1].toLowerCase());
                         break;
                     case "take":
-                        validInput = moveExecution.take(player, moveString[1]);
+                        validInput = Take.take(player, moveString[1]);
                         break;
                     case "use":
-                        validInput = moveExecution.use(player, moveString[1]);
+                        validInput = Use.use(player, moveString[1]);
                         break;
                     case "look":
-                        validInput = moveExecution.look(player);
+                        validInput = Look.look(player);
                         break;
                     case "restart":
-                        validInput = moveExecution.restart(player);
+                        validInput = Restart.restart(player);
                         break;
                     case "quit":
                         quit = true;

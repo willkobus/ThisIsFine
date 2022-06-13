@@ -79,7 +79,7 @@ public class Game {
     public static void welcome() throws InterruptedException {
         int delay = 500;
         System.out.println();
-        System.out.println("Hello VOLUNTEER TESTER #18978983! We are grateful that you have signed up for this trial. We also are grateful that you didn’t ask any questions ");
+        System.out.println("Hello VOLUNTEER TESTER #18978983! We are grateful that you have signed up for this trial. We also are grateful that you didn't ask any questions ");
         Thread.sleep(delay);
         System.out.println("as to what the trial would be and still signed the waiver! Safety is our number one concern here at Practical Applications Inc. Now that the door ");
         Thread.sleep(delay);
@@ -89,7 +89,7 @@ public class Game {
         Thread.sleep(delay);
         System.out.println(RED_TEXT + "'Escape the Burning Building'" + RESET_TEXT + ". In this scenario you have to solve puzzles and complete tasks in order to get all the keys and escape the building ");
         Thread.sleep(delay);
-        System.out.println("in a set number of moves. How many moves you ask? Well, to keep you good and stressed, you don’t get to know that! Don’t worry though, we will give ");
+        System.out.println("in a set number of moves. How many moves you ask? Well, to keep you good and stressed, you don't get to know that! Don’t worry though, we will give ");
         Thread.sleep(delay);
         System.out.println("periodic updates to let you know how you are doing! Good luck!");
     }
