@@ -4,7 +4,7 @@ class FiveSwitchPuzzle extends Puzzle {
     private boolean[] switches = new boolean[5];
     private boolean solved = false;
 
-    FiveSwitchPuzzle() {
+    public FiveSwitchPuzzle() {
         switches[0] = true;
         for (int i = 1; i < 5; i++) {
             switches[i] = false;

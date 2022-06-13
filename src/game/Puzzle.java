@@ -1,6 +1,6 @@
 package game;
 
-abstract class Puzzle {
+public abstract class Puzzle {
     private boolean solved = false;
 
     public boolean puzzleAction(int i) {

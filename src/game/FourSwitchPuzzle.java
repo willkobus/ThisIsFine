@@ -1,10 +1,10 @@
 package game;
 
-class FourSwitchPuzzle extends Puzzle {
+public class FourSwitchPuzzle extends Puzzle {
     boolean[] switches = new boolean[4];
     private boolean solved = false;
 
-    FourSwitchPuzzle() {
+    public FourSwitchPuzzle() {
         switches[0] = true;
         switches[1] = false;
         switches[2] = true;

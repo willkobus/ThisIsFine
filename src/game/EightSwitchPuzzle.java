@@ -4,7 +4,7 @@ class EightSwitchPuzzle extends Puzzle {
     boolean[] switches = new boolean[8];
     private boolean solved = false;
 
-    EightSwitchPuzzle() {
+    public EightSwitchPuzzle() {
         switches[0] = false;
         switches[1] = true;
         for (int i = 2; i < 8; i++) {
