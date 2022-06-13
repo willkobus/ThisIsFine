@@ -21,12 +21,12 @@ public class Moves {
 
             moveCount ++;
             player.setMoveCount(moveCount);
-            player.playerInfo(player);
+            player.playerInfo();
 
             return true;
         } else {
             System.out.println("No exit in that direction");
-            player.playerInfo(player);
+            player.playerInfo();
             return false;
         }
     }
@@ -41,7 +41,7 @@ public class Moves {
             System.out.println("You do not have that item.");
         }
 
-        player.playerInfo(player);
+        player.playerInfo();
         return true;
     }
 
@@ -53,7 +53,7 @@ public class Moves {
 
     public static boolean take(Player player, String item) throws Exception {
         System.out.println("You have picked up " + item);
-        player.playerInfo(player);
+        player.playerInfo();
         return true;
     }
 
@@ -61,7 +61,7 @@ public class Moves {
         System.out.println();
         System.out.println("New Game started. Move counter and inventory reset, and you have been returned to the starting area\n");
         currentPlayer = new Player();
-        currentPlayer.playerInfo(currentPlayer);
+        currentPlayer.playerInfo();
         return true;
     }
 
@@ -72,7 +72,7 @@ public class Moves {
         System.out.println(currentRoom.get("detailed"));
         System.out.println();
 
-        player.playerInfo(player);
+        player.playerInfo();
 
         return true;
     }

@@ -61,7 +61,6 @@ public class SlidePuzzleTest {
 
     @Test
     public void testToString() {
-        System.out.println(puzzle.grid);
         System.out.println(puzzle.toString());
     }
 }

@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 class SlidePuzzle extends Puzzle {
-    List<Integer> grid;
-    int gridSize = 9;
+    private List<Integer> grid;
+    private int gridSize = 9;
     private boolean solved = false;
 
     public SlidePuzzle() {
