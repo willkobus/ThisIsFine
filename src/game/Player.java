@@ -45,12 +45,12 @@ public class Player {
         inventory.add(item);
     }
 
-    public void playerInfo(Player player) throws Exception{
+    public void playerInfo() throws Exception{
         JSONObject room = jsonReader.readJSON();
-        JSONObject currentRoom = (JSONObject) room.get(player.getCurrentRoom());
-        System.out.println("Move Total: " + player.getMoveCount());
-        System.out.println("You are in the: " + player.getCurrentRoom() + ". " + currentRoom.get("description"));
-        System.out.println("Your Inventory: " + player.getInventory());
+        JSONObject currentRoom = (JSONObject) room.get(getCurrentRoom());
+        System.out.println("Move Total: " + getMoveCount());
+        System.out.println("You are in the: " + getCurrentRoom() + ". " + currentRoom.get("description"));
+        System.out.println("Your Inventory: " + getInventory());
         System.out.println("Items in room: " + currentRoom.get("items"));
         System.out.println(currentRoom.get("exits"));
     }

@@ -1,17 +1,17 @@
 package game;
 
-class FourSwitchPuzzle {
-    boolean[] switches = new boolean[4];
+public class FourSwitchPuzzle extends Puzzle {
+    private boolean[] switches = new boolean[4];
     private boolean solved = false;
 
-    FourSwitchPuzzle() {
+    public FourSwitchPuzzle() {
         switches[0] = true;
         switches[1] = false;
         switches[2] = true;
         switches[3] = false;
     }
 
-    void puzzleAction(int index) {
+    public boolean puzzleAction(int index) {
         if (index == 0) {
             switches[0] = !switches[0];
         }
@@ -32,6 +32,7 @@ class FourSwitchPuzzle {
         }
 
         solved = checkSolved();
+        return true;
     }
 
     private boolean checkSolved() {

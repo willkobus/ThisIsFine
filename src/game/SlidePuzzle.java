@@ -3,9 +3,9 @@ package game;
 import java.util.ArrayList;
 import java.util.List;
 
-class SlidePuzzle {
-    List<Integer> grid;
-    int gridSize = 9;
+class SlidePuzzle extends Puzzle {
+    private List<Integer> grid;
+    private int gridSize = 9;
     private boolean solved = false;
 
     public SlidePuzzle() {

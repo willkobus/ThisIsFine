@@ -12,12 +12,12 @@ public class Game {
         welcome();
         gameRules();
 
-        while(start());
+        playGame();
 
     }
 
-    private boolean start() throws Exception {
-        player.playerInfo(player);
+    private boolean playGame() throws Exception {
+        player.playerInfo();
         return !actionParser.playerMove(player);
 
     }
