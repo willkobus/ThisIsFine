@@ -4,7 +4,7 @@ import org.json.simple.JSONObject;
 
 import java.util.ArrayList;
 
-class Player {
+public class Player {
     private JSONRead jsonReader = new JSONRead();
     private String currentRoom;
     private ArrayList<String> inventory;
