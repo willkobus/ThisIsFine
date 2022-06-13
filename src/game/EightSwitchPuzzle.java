@@ -1,7 +1,7 @@
 package game;
 
 class EightSwitchPuzzle extends Puzzle {
-    boolean[] switches = new boolean[8];
+    private boolean[] switches = new boolean[8];
     private boolean solved = false;
 
     public EightSwitchPuzzle() {

@@ -20,7 +20,7 @@ public class Game {
     }
 
     private boolean playGame() throws Exception {
-        player.playerInfo(player);
+        player.playerInfo();
         return !actionParser.playerMove(player);
 
     }
