@@ -1,7 +1,5 @@
 package game;
 
-import game.actions.*;
-
 import java.util.Scanner;
 
 class ActionParser {
@@ -23,19 +21,23 @@ class ActionParser {
                 moveChoice = moveString[0].toLowerCase();
                 switch (moveChoice) {
                     case "move":
-                        validInput = Move.move(player, moveString[1].toLowerCase());
+                        validInput = Moves.move(player, moveString[1].toLowerCase());
                         break;
                     case "take":
-                        validInput = Take.take(player, moveString[1]);
+                        validInput = Moves.take(player, moveString[1]);
                         break;
                     case "use":
-                        validInput = Use.use(player, moveString[1]);
+                        validInput = Moves.item(player, moveString);
+                        break;
+                    case "pull":
+                        // TODO: add puzzle reference
+                        // validInput = Moves.puzzle(puzzle, moveString);
                         break;
                     case "look":
-                        validInput = Look.look(player);
+                        validInput = Moves.look(player);
                         break;
                     case "restart":
-                        validInput = Restart.restart(player);
+                        validInput = Moves.restart(player);
                         break;
                     case "quit":
                         quit = true;

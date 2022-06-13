@@ -15,11 +15,11 @@ public class Game {
         welcome();
         gameRules();
 
-        while(start());
+        playGame();
 
     }
 
-    private boolean start() throws Exception {
+    private boolean playGame() throws Exception {
         player.playerInfo(player);
         return !actionParser.playerMove(player);
 
