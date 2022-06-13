@@ -2,6 +2,8 @@ package game;
 
 import java.util.Scanner;
 
+import static game.AsciiArts.asciiArtLose;
+
 class ActionParser {
     private String[] moveString;
     private String moveChoice;
@@ -42,6 +44,7 @@ class ActionParser {
                     case "quit":
                         quit = true;
                         validInput = true;
+                        asciiArtLose();
                         break;
                     default:
                         System.out.println("Sorry that is not a valid input\nIf you need help just type help!");
