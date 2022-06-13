@@ -1,6 +1,6 @@
 package game;
 
-class EightSwitchPuzzle {
+class EightSwitchPuzzle extends Puzzle {
     boolean[] switches = new boolean[8];
     private boolean solved = false;
 
@@ -12,7 +12,7 @@ class EightSwitchPuzzle {
         }
     }
 
-    void puzzleAction(int index) {
+    public boolean puzzleAction(int index) {
         if (index == 0) {
             switches[7] = !switches[7];
         }
@@ -28,7 +28,9 @@ class EightSwitchPuzzle {
         else {
             switches[index + 1] = !switches[index + 1];
         }
+
         solved = checkSolved();
+        return true;
     }
 
     private boolean checkSolved() {

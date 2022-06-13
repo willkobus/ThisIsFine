@@ -3,7 +3,7 @@ package game;
 import java.util.ArrayList;
 import java.util.List;
 
-class SlidePuzzle {
+class SlidePuzzle extends Puzzle {
     List<Integer> grid;
     int gridSize = 9;
     private boolean solved = false;
