@@ -7,10 +7,9 @@ public class Moves {
     private final static int REQUIRED_KEYS = 1;
     private final static String EXIT_ROOM = "lobby";
 
+
     public static boolean move(Player player, String direction) throws Exception {
         int moveCount = player.getMoveCount();
-//        JSONObject room = JSONRead.readJSON();
-//        JSONObject currentRoom = (JSONObject) room.get(player.getCurrentRoom());
         Room room = RoomFactory.getRoom(player);
 
         String destRoom;
@@ -73,9 +72,20 @@ public class Moves {
     }
 
     public static boolean take(Player player, String item) throws Exception {
-        System.out.println("You have picked up " + item);
-        player.addToInventory(item);
-        RoomFactory.deleteFromRoom(player, item);
+        Room room = RoomFactory.getRoom(player);
+        if (room.getRoomItems().size() > 0 && room.getRoomItems().contains(item)) {
+            if(room.getName().equals("breaker room") && item.equals("key")){
+                System.out.println("The key cannot be picked up until the puzzle is solved");
+            }
+            else {
+                System.out.println("You have picked up " + item);
+                player.addToInventory(item);
+                RoomFactory.deleteFromRoom(player, item);
+            }
+        }
+        else {
+            System.out.println(item + "cannot be picked up. Either room is empty or item is not in room");
+        }
         player.playerInfo();
         RoomFactory.displayRoomInfo(player);
         return true;
@@ -84,19 +94,18 @@ public class Moves {
     public static boolean restart() throws Exception {
         System.out.println();
         System.out.println("New Game started. Move counter and inventory reset, and you have been returned to the starting area\n");
-        Player currentPlayer = new Player();
-        currentPlayer.playerInfo();
-        RoomFactory.initializeRoom();
+        Game game = new Game();
+        game.execute();
         return true;
     }
 
     public static boolean look(Player player) throws Exception {
-        JSONObject room = JSONRead.readJSON("resources/rooms.json");
-        JSONObject currentRoom = (JSONObject) room.get(player.getCurrentRoom());
+        Room room = RoomFactory.getRoom(player);
         System.out.println();
-        System.out.println(currentRoom.get("detailed"));
-        // TODO: IF there's a puzzle, print out the puzzle
-        // System.out.println(RoomFactory.getRoom(player).getPuzzle().toString());
+        System.out.println(room.getDetailedDescription());
+        if (room.getPuzzle() != null) {
+            System.out.println(RoomFactory.getRoom(player).getPuzzle().toString());
+        }
         System.out.println();
 
         player.playerInfo();
