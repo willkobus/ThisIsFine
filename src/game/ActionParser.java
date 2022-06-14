@@ -33,8 +33,19 @@ class ActionParser {
                         validInput = Moves.item(player, moveString);
                         break;
                     case "pull":
-                        // TODO: add puzzle reference
-                        // validInput = Moves.puzzle(puzzle, moveString);
+                        Puzzle roomPuzzle = RoomFactory.getRoom(player).getPuzzle();
+                        validInput = Moves.puzzle(roomPuzzle, moveString);
+                        System.out.println(roomPuzzle.toString());
+
+                        if (validInput) {
+                            player.setMoveCount(player.getMoveCount() + 1);
+
+                            if (roomPuzzle.isSolved() && RoomFactory.getRoom(player).getRoomItems().contains("key")) {
+                                player.addToInventory("key");
+                                RoomFactory.getRoom(player).deleteRoomItem("key");
+                                System.out.println("You solved the puzzle! You grab the key.");
+                            }
+                        }
                         break;
                     case "look":
                         validInput = Moves.look(player);
