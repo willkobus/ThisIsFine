@@ -18,12 +18,4 @@ class readFromJSONSeparateLines {
             Thread.sleep(delay1);
         }
     }
-
-    public static void gameRules(String ruleSource) throws Exception {
-        JSONObject ruleObject = JSONRead.readJSON(filepath);
-        ArrayList<String> ruleText = (ArrayList<String>) ruleObject.get(ruleSource);
-        for (String line : ruleText) {
-            System.out.println(line);
-        }
-    }
 }

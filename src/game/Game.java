@@ -1,6 +1,5 @@
 package game;
 
-import static game.readFromJSONSeparateLines.gameRules;
 import static game.readFromJSONSeparateLines.welcomeTextFromSeparateLines;
 
 public class Game {
@@ -14,7 +13,8 @@ public class Game {
     public void execute() throws Exception {
         AsciiArts.asciiArtThisIsFine();
         welcome();
-        gameRules("gameRules");
+        welcomeTextFromSeparateLines("gameRules");
+//        welcomeTextFromSeparateLines("help");
 
         playGame();
     }

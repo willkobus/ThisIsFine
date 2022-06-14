@@ -3,6 +3,7 @@ package game;
 import java.util.Scanner;
 
 import static game.AsciiArts.asciiArtLose;
+import static game.readFromJSONSeparateLines.welcomeTextFromSeparateLines;
 
 class ActionParser {
     private String[] moveString;
@@ -45,6 +46,9 @@ class ActionParser {
                         quit = true;
                         validInput = true;
                         asciiArtLose();
+                        break;
+                    case "help":
+                        welcomeTextFromSeparateLines("help");
                         break;
                     default:
                         System.out.println("Sorry that is not a valid input\nIf you need help just type help!");
