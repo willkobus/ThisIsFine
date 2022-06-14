@@ -26,6 +26,7 @@ public class Moves {
             return true;
         } else {
             System.out.println("No exit in that direction");
+            player.playerInfo();
             RoomFactory.displayRoomInfo(player);
             return false;
         }
