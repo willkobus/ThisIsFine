@@ -15,6 +15,9 @@ public class Game {
     Player player = new Player();
     ActionParser actionParser = new ActionParser();
 
+    public Game() throws Exception {
+    }
+
     public void execute() throws Exception {
         AsciiArts.asciiArtThisIsFine();
 //        welcome();
@@ -26,7 +29,9 @@ public class Game {
     }
 
     private boolean playGame() throws Exception {
+        RoomFactory.initializeRoom();
         player.playerInfo();
+        RoomFactory.displayRoomInfo(player);
         return !actionParser.playerMove(player);
 
     }

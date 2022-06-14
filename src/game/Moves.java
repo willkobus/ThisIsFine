@@ -1,32 +1,32 @@
 package game;
 
-import game.JSONRead;
-import game.Player;
-import game.Puzzle;
+import game.rooms.Room;
 import org.json.simple.JSONObject;
 
 public class Moves {
-    static JSONRead jsonReader = new JSONRead();
+//    static JSONRead jsonReader = new JSONRead();
 
     public static boolean move(Player player, String direction) throws Exception {
         int moveCount = player.getMoveCount();
-        JSONObject room = jsonReader.readJSON();
-        JSONObject currentRoom = (JSONObject) room.get(player.getCurrentRoom());
+//        JSONObject room = JSONRead.readJSON();
+//        JSONObject currentRoom = (JSONObject) room.get(player.getCurrentRoom());
+        Room room = RoomFactory.getRoom(player);
 
         String destRoom;
 
-        if (currentRoom.containsKey(direction)) {
-            destRoom = (String) currentRoom.get(direction);
+        if (room.getDirection(direction) != null) {
+            destRoom = room.getDirection(direction);
             player.setCurrentRoom(destRoom);
 
             moveCount ++;
             player.setMoveCount(moveCount);
             player.playerInfo();
+            RoomFactory.displayRoomInfo(player);
 
             return true;
         } else {
             System.out.println("No exit in that direction");
-            player.playerInfo();
+            RoomFactory.displayRoomInfo(player);
             return false;
         }
     }
@@ -53,20 +53,24 @@ public class Moves {
 
     public static boolean take(Player player, String item) throws Exception {
         System.out.println("You have picked up " + item);
+        player.addToInventory(item);
+        RoomFactory.deleteFromRoom(player, item);
         player.playerInfo();
+        RoomFactory.displayRoomInfo(player);
         return true;
     }
 
-    public static boolean restart(Player currentPlayer) throws Exception {
+    public static boolean restart() throws Exception {
         System.out.println();
         System.out.println("New Game started. Move counter and inventory reset, and you have been returned to the starting area\n");
-        currentPlayer = new Player();
+        Player currentPlayer = new Player();
         currentPlayer.playerInfo();
+        RoomFactory.initializeRoom();
         return true;
     }
 
     public static boolean look(Player player) throws Exception {
-        JSONObject room = jsonReader.readJSON();
+        JSONObject room = JSONRead.readJSON();
         JSONObject currentRoom = (JSONObject) room.get(player.getCurrentRoom());
         System.out.println();
         System.out.println(currentRoom.get("detailed"));
