@@ -38,6 +38,22 @@ public class JSONRead {
         return jsonTextFromWelcome;
     }
 
+    // read from gameTextSeparateLines.json
+    public static String getJSONFromFileSeparateLines(String filename){
+        String jsonTextFromFileSeparateLines = "";
+        try{
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(filename));
+
+            String line;
+            while ((line = bufferedReader.readLine()) != null){
+                jsonTextFromFileSeparateLines += line + "\n";
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return jsonTextFromFileSeparateLines;
+    }
+
 
 
 

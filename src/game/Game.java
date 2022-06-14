@@ -1,6 +1,14 @@
 package game;
 
-import static game.ColorEnums.*;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+import java.io.FileReader;
+import java.io.IOException;
+
+import static game.ColorEnums.BLUE_TEXT;
+import static game.ColorEnums.RESET_TEXT;
 
 public class Game {
 
@@ -9,7 +17,8 @@ public class Game {
 
     public void execute() throws Exception {
         AsciiArts.asciiArtThisIsFine();
-        welcome();
+//        welcome();
+//        welcomeTextFromSeparateLines();
         gameRules();
 
         playGame();
@@ -41,30 +50,46 @@ public class Game {
     }
 
     // Welcome method
-    public static void welcome() throws InterruptedException {
+    public static void welcome() throws IOException, ParseException {
         int delay = 500;
 //        String strJson = getJSONFromFile("resources/gameText.json");
-//
 //        System.out.println(strJson);
+
+        JSONParser jsonParser = new JSONParser();
+        FileReader reader = new FileReader("resources/gameText.json");
+        // obj is java object
+        Object obj = jsonParser.parse(reader);
+        // typecasting to json object. This converts java object "obj" to json object "welcomeObject"
+        JSONObject welcomeObject = (JSONObject)obj;
+        // after we typecast, we can use the .get method
+
+//        String welcomeText = (String) welcomeObject.get("welcome");
+//        System.out.println(welcomeText);
+        System.out.println(welcomeObject.get("welcome"));
+
 //        for (int i=0; i<strJson.length(); i++){
 //            JSONObject strJsonLine = (JSONObject) strJson.(i);
 //            System.out.println(strJsonLine);
 //        }
 
-        System.out.println();
-        System.out.println("Hello VOLUNTEER TESTER #18978983! We are grateful that you have signed up for this trial. We also are grateful that you didn't ask any questions ");
-        Thread.sleep(delay);
-        System.out.println("as to what the trial would be and still signed the waiver! Safety is our number one concern here at Practical Applications Inc. Now that the door ");
-        Thread.sleep(delay);
-        System.out.println("has locked behind you in this random house we had you come to, you may be wondering what it is we are going to have you do. Well simply put, we ");
-        Thread.sleep(delay);
-        System.out.println("are conducting a study to see how well people solve problems when faced with a stressful situation. In your case it seems you are in situation ");
-        Thread.sleep(delay);
-        System.out.println("#4352, " + RED_TEXT + "'Escape the Burning Building'" + RESET_TEXT + ". In this scenario you have to solve puzzles and complete tasks in order to get all the keys and escape the ");
-        Thread.sleep(delay);
-        System.out.println("building in a set number of moves. How many moves you ask? Well, to keep you good and stressed, you don't get to know that! Don’t worry though, we will give ");
-        Thread.sleep(delay);
-        System.out.println("periodic updates to let you know how you are doing! Good luck!");
+
+
+
+        // printlns.. this works
+//        System.out.println();
+//        System.out.println("Hello VOLUNTEER TESTER #18978983! We are grateful that you have signed up for this trial. We also are grateful that you didn't ask any questions ");
+//        Thread.sleep(delay);
+//        System.out.println("as to what the trial would be and still signed the waiver! Safety is our number one concern here at Practical Applications Inc. Now that the door ");
+//        Thread.sleep(delay);
+//        System.out.println("has locked behind you in this random house we had you come to, you may be wondering what it is we are going to have you do. Well simply put, we ");
+//        Thread.sleep(delay);
+//        System.out.println("are conducting a study to see how well people solve problems when faced with a stressful situation. In your case it seems you are in situation ");
+//        Thread.sleep(delay);
+//        System.out.println("#4352, " + RED_TEXT + "'Escape the Burning Building'" + RESET_TEXT + ". In this scenario you have to solve puzzles and complete tasks in order to get all the keys and escape the ");
+//        Thread.sleep(delay);
+//        System.out.println("building in a set number of moves. How many moves you ask? Well, to keep you good and stressed, you don't get to know that! Don’t worry though, we will give ");
+//        Thread.sleep(delay);
+//        System.out.println("periodic updates to let you know how you are doing! Good luck!");
     }
 
 }
