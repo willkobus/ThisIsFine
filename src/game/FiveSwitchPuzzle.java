@@ -1,5 +1,8 @@
 package game;
 
+import static game.ColorEnums.*;
+import static game.ColorEnums.RESET_TEXT;
+
 class FiveSwitchPuzzle extends Puzzle {
     private boolean[] switches = new boolean[5];
     private boolean solved = false;
@@ -44,16 +47,12 @@ class FiveSwitchPuzzle extends Puzzle {
         return isSolved;
     }
 
-    public boolean isSolved() {
-        return solved;
-    }
-
     private String switchString(boolean b) {
         if (b) {
-            return "X ";
+            return GREEN_FONT +"X " + RESET_TEXT;
         }
         else {
-            return "O ";
+            return RED_FONT + "O " + RESET_TEXT;
         }
     }
 

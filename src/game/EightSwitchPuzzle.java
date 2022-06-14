@@ -1,5 +1,7 @@
 package game;
 
+import static game.ColorEnums.*;
+
 class EightSwitchPuzzle extends Puzzle {
     private boolean[] switches = new boolean[8];
     private boolean solved = false;
@@ -13,6 +15,10 @@ class EightSwitchPuzzle extends Puzzle {
     }
 
     public boolean puzzleAction(int index) {
+        if (index < 0 || index > 7) {
+            return false;
+        }
+
         if (index == 0) {
             switches[7] = !switches[7];
         }
@@ -31,6 +37,7 @@ class EightSwitchPuzzle extends Puzzle {
 
         solved = checkSolved();
         return true;
+
     }
 
     private boolean checkSolved() {
@@ -45,17 +52,12 @@ class EightSwitchPuzzle extends Puzzle {
         return isSolved;
     }
 
-
-    public boolean isSolved() {
-        return solved;
-    }
-
     private String switchString(boolean b) {
         if (b) {
-            return "X ";
+            return GREEN_FONT +"X " + RESET_TEXT;
         }
         else {
-            return "O ";
+            return RED_FONT + "O " + RESET_TEXT;
         }
     }
 
