@@ -7,8 +7,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 
 public abstract class JSONRead {
-    public static JSONObject readJSON() throws Exception{
-        Object obj = new JSONParser().parse(new FileReader("resources/rooms.json"));
+    public static JSONObject readJSON(String filepath) throws Exception{
+        Object obj = new JSONParser().parse(new FileReader(filepath));
 
         // typecasting obj to JSONObject
         JSONObject jo = (JSONObject) obj;

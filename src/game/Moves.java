@@ -70,7 +70,7 @@ public class Moves {
     }
 
     public static boolean look(Player player) throws Exception {
-        JSONObject room = JSONRead.readJSON();
+        JSONObject room = JSONRead.readJSON("resources/rooms.json");
         JSONObject currentRoom = (JSONObject) room.get(player.getCurrentRoom());
         System.out.println();
         System.out.println(currentRoom.get("detailed"));

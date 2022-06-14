@@ -4,13 +4,12 @@ import game.JSONRead;
 import org.json.simple.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 public class Room {
     private String STARTING_ROOM = "lobby";
 
 
-    JSONObject rooms = JSONRead.readJSON();
+    JSONObject rooms = JSONRead.readJSON("resources/rooms.json");
     JSONObject currentRoom = (JSONObject) rooms.get(STARTING_ROOM);
     ArrayList<String> roomItems = (ArrayList<String>) currentRoom.get("items");
     String north;
