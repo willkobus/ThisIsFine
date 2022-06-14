@@ -1,43 +1,45 @@
 package game.rooms;
 
 import game.JSONRead;
+import game.Puzzle;
 import org.json.simple.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class Room {
-    private String STARTING_ROOM = "lobby";
 
-
-    JSONObject rooms = JSONRead.readJSON("resources/rooms.json");
-    JSONObject currentRoom = (JSONObject) rooms.get(STARTING_ROOM);
-    ArrayList<String> roomItems = (ArrayList<String>) currentRoom.get("items");
+    String name;
+    String description;
+    String detailedDescription;
+    ArrayList<String> items;
+    ArrayList<String> exits;
+    Puzzle puzzle;
     String north;
     String south;
     String east;
     String west;
 
-    public Room() throws Exception {
 
-    }
-
-    public ArrayList<String> getRoomItems() {
-        return roomItems;
-    }
-
-    public void deleteRoomItem(String item) {
-    }
-////    JSONObject currentRoom = (JSONObject) rooms.get(STARTING_ROOM);
-    String name = (String) currentRoom.get("name");
-    String description = (String) currentRoom.get("description");
-    String detailedDescription = (String) currentRoom.get("detailed");
-    ArrayList<String> items = (ArrayList<String>) currentRoom.get("items");
-    //String[] exits = (String[]) currentRoom.get("exits");
-
-    public Room(String name, String description, String detailedDescription) throws Exception{
+    public Room(String name, String description, String detailedDescription, ArrayList<String> items, ArrayList<String> exits) throws Exception{
         this.name = name;
         this.description = description;
         this.detailedDescription = detailedDescription;
+        this.items = items;
+        this.exits = exits;
+        this.puzzle = null;
+        this.north = null;
+        this.south = null;
+        this.east = null;
+        this.west = null;
+    }
+    public ArrayList<String> getRoomItems() {
+        return items;
+    }
+
+    public void deleteRoomItem(String item) {
+        int removeIndex = items.indexOf(item);
+        items.remove(removeIndex);
     }
 
     public String getDirection(String desiredDirection){
@@ -85,5 +87,29 @@ public class Room {
 
     public String getDetailedDescription() {
         return detailedDescription;
+    }
+
+    public Puzzle getPuzzle() {
+        return puzzle;
+    }
+
+    public void setPuzzle(Puzzle puzzle) {
+        this.puzzle = puzzle;
+    }
+
+    public void setNorth(String north) {
+        this.north = north;
+    }
+
+    public void setSouth(String south) {
+        this.south = south;
+    }
+
+    public void setEast(String east) {
+        this.east = east;
+    }
+
+    public void setWest(String west) {
+        this.west = west;
     }
 }
