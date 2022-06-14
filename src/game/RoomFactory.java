@@ -44,6 +44,9 @@ abstract class RoomFactory {
             if (currentRoom.containsKey("south")) {
                 roomObj.setSouth((String) currentRoom.get("south"));
             }
+            if (currentRoom.containsKey("puzzle")) {
+                roomObj.setPuzzle(puzzleHelper((String) currentRoom.get("puzzle")));
+            }
             roomMap.put(room,roomObj);
             }
     }
@@ -64,5 +67,20 @@ abstract class RoomFactory {
         Room room;
         room = roomMap.get(player.getCurrentRoom());
         return room;
+    }
+
+    private static Puzzle puzzleHelper(String puzzleType) {
+        switch (puzzleType) {
+            case "eight":
+                return new EightSwitchPuzzle();
+            case "five":
+                return new FiveSwitchPuzzle();
+            case "four":
+                return new FourSwitchPuzzle();
+            case "slide":
+                return new SlidePuzzle();
+            default:
+                return null;
+        }
     }
 }

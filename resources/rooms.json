@@ -5,7 +5,8 @@
    "detailed": "Next to you is a clear box with a key inside. You try to open the box but its locked. It looks like there is a latch powered by electricity. Judging by the activation of the emergency lights it looks like the room has no power. On the opposite wall you can make out a series of breakers. As you approach the breaker you see a note that reads 'If you want power, get all these breakers turned on.'",
    "items": ["key"],
    "south" : "lobby",
-   "exits" : ["South Exit: Lobby"]
+   "exits" : ["South Exit: Lobby"],
+   "puzzle" : "eight"
  },
   "lobby" : {
     "name": "lobby",

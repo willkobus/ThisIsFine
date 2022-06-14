@@ -47,9 +47,21 @@ public class Moves {
     }
 
     public static boolean puzzle(Puzzle game, String[] item) {
+        if (game == null) {
+            System.out.println("There is no puzzle in this room");
+            return false;
+        }
         int puzzleChoice = -1;
-        puzzleChoice = Integer.parseInt(item[1]);
-        return game.puzzleAction(puzzleChoice);
+
+        // Assumed input is "pull #", will need error trapping in the future.
+        if (item[1].matches("[0-9]")) {
+            puzzleChoice = Integer.parseInt(item[1]);
+            return game.puzzleAction(puzzleChoice);
+        }
+        else {
+            return false;
+        }
+
     }
 
     public static boolean take(Player player, String item) throws Exception {
@@ -75,6 +87,8 @@ public class Moves {
         JSONObject currentRoom = (JSONObject) room.get(player.getCurrentRoom());
         System.out.println();
         System.out.println(currentRoom.get("detailed"));
+        // TODO: IF there's a puzzle, print out the puzzle
+        // System.out.println(RoomFactory.getRoom(player).getPuzzle().toString());
         System.out.println();
 
         player.playerInfo();
