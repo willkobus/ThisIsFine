@@ -9,7 +9,7 @@ class readFromJSONSeparateLines {
 
     // read json from gameTextSeparateLines.json
     public static void welcomeTextFromSeparateLines(String textSource) throws Exception {
-        int delay1 = 500;
+        int delay1 = 300;
 
         JSONObject welcomeObject= JSONRead.readJSON(filepath);
         ArrayList<String> welcomeText = (ArrayList<String>) welcomeObject.get(textSource);
