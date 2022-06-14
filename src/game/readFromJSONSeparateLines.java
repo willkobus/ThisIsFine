@@ -5,10 +5,10 @@ import org.json.simple.JSONObject;
 import java.util.ArrayList;
 
 class readFromJSONSeparateLines {
-    private final static String filepath = "resources/gameTextSeparateLines.json";
+    private final static String filepath = "resources/gameText.json";
 
-    // read json from gameTextSeparateLines.json
-    public static void welcomeTextFromSeparateLines(String textSource) throws Exception {
+    // read json from gameText.json
+    public static void welcomeText(String textSource) throws Exception {
         int delay1 = 300;
 
         JSONObject welcomeObject= JSONRead.readJSON(filepath);

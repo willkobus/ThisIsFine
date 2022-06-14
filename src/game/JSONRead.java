@@ -16,13 +16,6 @@ public abstract class JSONRead {
         return jo;
     }
 
-//    public class readJSONFromWelcome() {
-//        Object obj = new JSONParser().parse(new FileReader("resources/gameText.json"));
-//
-//        public readJSONFromWelcome() throws IOException, ParseException {
-//        }
-//    }
-//     read from gameText.json
     public static String getJSONFromFile(String filename){
         String jsonTextFromWelcome = "";
         try{
@@ -38,7 +31,7 @@ public abstract class JSONRead {
         return jsonTextFromWelcome;
     }
 
-    // read from gameTextSeparateLines.json
+    // read from gameText.json
     public static String getJSONFromFileSeparateLines(String filename){
         String jsonTextFromFileSeparateLines = "";
         try{
@@ -53,17 +46,6 @@ public abstract class JSONRead {
         }
         return jsonTextFromFileSeparateLines;
     }
-
-
-
-
-//    public JSONObject readGameText() throws Exception {
-//        Object obj = new JSONParser().parse(new FileReader("resources/gameText.json"));
-//
-//        // typecasting obj to JSONObject
-//        JSONObject joGameText = (JSONObject) obj;
-//        return joGameText;
-//    }
 }
 
 

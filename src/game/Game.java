@@ -1,14 +1,10 @@
 package game;
 
-<<<<<<< HEAD
-=======
 import game.rooms.Room;
 
 import java.util.Map;
 
-import static game.readFromJSONSeparateLines.gameRules;
->>>>>>> Dev
-import static game.readFromJSONSeparateLines.welcomeTextFromSeparateLines;
+import static game.readFromJSONSeparateLines.welcomeText;
 
 public class Game {
 
@@ -20,9 +16,7 @@ public class Game {
     }
 
     public void execute() throws Exception {
-        AsciiArts.asciiArtThisIsFine();
         welcome();
-        welcomeTextFromSeparateLines("gameRules");
 
         playGame();
     }
@@ -37,7 +31,9 @@ public class Game {
 
     // Welcome method
     public static void welcome() throws Exception {
-        welcomeTextFromSeparateLines("welcome");
+        AsciiArts.asciiArtThisIsFine();
+        welcomeText("welcome");
+        welcomeText("gameRules");
     }
 
 }
