@@ -40,6 +40,11 @@ class EightSwitchPuzzle extends Puzzle {
 
     }
 
+    @Override
+    public boolean isSolved() {
+        return solved;
+    }
+
     private boolean checkSolved() {
         boolean isSolved = true;
 

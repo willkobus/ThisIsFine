@@ -4,7 +4,8 @@ import game.rooms.Room;
 import org.json.simple.JSONObject;
 
 public class Moves {
-//    static JSONRead jsonReader = new JSONRead();
+    private final static int REQUIRED_KEYS = 1;
+    private final static String EXIT_ROOM = "lobby";
 
     public static boolean move(Player player, String direction) throws Exception {
         int moveCount = player.getMoveCount();
@@ -32,11 +33,18 @@ public class Moves {
         }
     }
 
-    public static boolean item(Player player, String[] item) throws Exception {
-        if (player.getInventory().contains(item[1])) {
-            // TODO: add a remove item method to player
-            // player.removeFromInventory(item[1]);
-            System.out.println("You have used " + item[1]);
+    public static boolean use(Player player, String item) throws Exception {
+        if (player.getInventory().contains(item)) {
+            System.out.println("You have used " + item);
+
+            if (item.equals("key") || item.equals("keys")) {
+                int count = (int) player.getInventory().stream().filter(i -> i.equals("key")).count();
+
+                if (count == REQUIRED_KEYS && player.getCurrentRoom().equalsIgnoreCase(EXIT_ROOM)) {
+                    player.wins();
+                    return true;
+                }
+            }
         }
         else {
             System.out.println("You do not have that item.");

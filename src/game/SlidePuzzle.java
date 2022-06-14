@@ -111,6 +111,11 @@ class SlidePuzzle extends Puzzle {
         return isAdjacent;
     }
 
+    @Override
+    public boolean isSolved() {
+        return solved;
+    }
+
     private boolean checkSolved() {
         boolean isSolved = true;
 

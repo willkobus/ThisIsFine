@@ -38,6 +38,11 @@ public class FourSwitchPuzzle extends Puzzle {
         return true;
     }
 
+    @Override
+    public boolean isSolved() {
+        return solved;
+    }
+
     private boolean checkSolved() {
         boolean isSolved = true;
 

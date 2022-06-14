@@ -12,6 +12,7 @@ public class Player {
     private String currentRoom;
     private ArrayList<String> inventory;
     private int moveCount;
+    private boolean hasWon = false;
 
     public Player() throws Exception {
         currentRoom = "lobby";
@@ -46,6 +47,14 @@ public class Player {
 
     public void addToInventory(String item){
         inventory.add(item);
+    }
+
+    public void wins() {
+        this.hasWon = true;
+    }
+
+    public boolean checkWin() {
+        return hasWon;
     }
 
     public void playerInfo() throws Exception{

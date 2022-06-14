@@ -22,6 +22,10 @@ public class Game {
         gameRules("gameRules");
 
         playGame();
+
+        if (player.checkWin()) {
+            winScreen();
+        }
     }
 
     private boolean playGame() throws Exception {
@@ -29,7 +33,6 @@ public class Game {
         player.playerInfo();
         RoomFactory.displayRoomInfo(player);
         return !actionParser.playerMove(player);
-
     }
 
     // Welcome method
@@ -37,4 +40,8 @@ public class Game {
         welcomeTextFromSeparateLines("welcome");
     }
 
+    public static void winScreen() throws Exception {
+        //welcomeTextFromSeparateLines("welcome");
+        System.out.println("YOU WIN");
+    }
 }
