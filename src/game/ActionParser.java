@@ -37,7 +37,7 @@ class ActionParser {
                         validInput = Moves.look(player);
                         break;
                     case "restart":
-                        validInput = Moves.restart(player);
+                        validInput = Moves.restart();
                         break;
                     case "quit":
                         quit = true;

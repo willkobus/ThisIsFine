@@ -9,8 +9,8 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.*;
 
-public class JSONRead {
-    public JSONObject readJSON() throws Exception{
+public abstract class JSONRead {
+    public static JSONObject readJSON() throws Exception{
         Object obj = new JSONParser().parse(new FileReader("resources/rooms.json"));
 
         // typecasting obj to JSONObject
