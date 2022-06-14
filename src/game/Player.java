@@ -1,7 +1,7 @@
 package game;
 
 //import game.rooms.Lobby;
-import game.rooms.Room;
+
 import org.json.simple.JSONObject;
 
 import java.util.ArrayList;
@@ -49,7 +49,7 @@ public class Player {
     }
 
     public void playerInfo() throws Exception{
-        JSONObject room = JSONRead.readJSON();
+        JSONObject room = JSONRead.readJSON("resources/rooms.json");
         JSONObject currentRoom = (JSONObject) room.get(getCurrentRoom());
         System.out.println("Move Total: " + getMoveCount());
         System.out.println("You are in the: " + getCurrentRoom() + ". " + currentRoom.get("description"));

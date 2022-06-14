@@ -1,0 +1,28 @@
+{
+  "welcome": ["Hello VOLUNTEER TESTER #18978983!","We are grateful that you have signed up for this trial.",
+    "We also are grateful that you didn't ask any questions as to what the trial would be and still signed the waiver!",
+    "Safety is our number one concern here at Practical Applications Inc.",
+    "Now that the door has locked behind you in this random house we had you come to, you may be wondering what it is we are going to have you do. ",
+    "Well simply put, we are conducting a study to see how well people solve problems when faced with a stressful situation. ",
+    "In your case it seems you are in situation #4352, \u001B[41m'Escape the Burning Building'\u001B[0m. ",
+    "In this scenario you have to solve puzzles and complete tasks in order to get all the keys and escape the building in a set number of moves. ",
+    "How many moves you ask? ",
+    "Well, to keep you good and stressed, you don't get to know that! ",
+    "Don’t worry though, we will give periodic updates to let you know how you are doing! ",
+    "Good luck!"],
+  "gameRules": ["==================================================================================================",
+    "GAME RULES:",
+    "Type a \u001B[44mverb\u001B[0m and a \u001B[44mnoun\u001B[0m.",
+    "Here are the options for verbs and how you use them:",
+    "\t1. take <item>",
+    "\t2. use <item>",
+    "\t3. move <direction> (east, west, north, south)",
+    "\t4. look (gives more detail about the current room)",
+    "\t5. quit (exits game)",
+    "\t6. restart (restarts new game, loses all current settings)",
+    "Goal: Go to different rooms, solve the puzzles and get the keys to escape the burning building.",
+    "REMEMBER, you have to finish this task within 100 steps. Otherwise ...",
+    "=================================================================================================="],
+  "help": []
+}
+

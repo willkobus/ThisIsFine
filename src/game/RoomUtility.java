@@ -20,7 +20,7 @@ abstract class RoomFactory {
 
     public static void initializeRoom() throws Exception {
         try {
-            rooms = JSONRead.readJSON();
+            rooms = JSONRead.readJSON("resources/rooms.json");
             keys = rooms.keySet();
 
         } catch (Exception e) {
