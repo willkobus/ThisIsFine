@@ -1,16 +1,19 @@
 package game;
 
+//import game.rooms.Lobby;
+import game.rooms.Room;
 import org.json.simple.JSONObject;
 
 import java.util.ArrayList;
 
 public class Player {
-    private JSONRead jsonReader = new JSONRead();
+//    Room lobby = new Lobby();
+//    private JSONRead jsonReader = new JSONRead();
     private String currentRoom;
     private ArrayList<String> inventory;
     private int moveCount;
 
-    public Player(){
+    public Player() throws Exception {
         currentRoom = "lobby";
         inventory = new ArrayList<>();
         moveCount = 0;
@@ -46,12 +49,11 @@ public class Player {
     }
 
     public void playerInfo() throws Exception{
-        JSONObject room = jsonReader.readJSON();
+        JSONObject room = JSONRead.readJSON();
         JSONObject currentRoom = (JSONObject) room.get(getCurrentRoom());
         System.out.println("Move Total: " + getMoveCount());
         System.out.println("You are in the: " + getCurrentRoom() + ". " + currentRoom.get("description"));
         System.out.println("Your Inventory: " + getInventory());
-        System.out.println("Items in room: " + currentRoom.get("items"));
         System.out.println(currentRoom.get("exits"));
     }
 }
