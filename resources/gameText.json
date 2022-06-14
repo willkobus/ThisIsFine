@@ -23,6 +23,18 @@
     "Goal: Go to different rooms, solve the puzzles and get the keys to escape the burning building.",
     "REMEMBER, you have to finish this task within 100 steps. Otherwise ...",
     "=================================================================================================="],
-  "help": []
+  "help": ["==================================================================================================",
+    "\u001B[46m HELP Page:\u001B[0m",
+    "Goal of the game: Move from room to room, solve puzzles to get a key, collect 3 keys and escape the burning building.",
+    "You have to escape within 100 steps.",
+    "Type a verb and a noun together to play game.",
+    "\t1. take <item>: To take an item in the room, type 'take <item>'. Example: 'take key'",
+    "\t2. use <item>: To use the item in your inventory, type 'use <item>'. Example: 'use key'",
+    "\t3. move <direction> (east, west, north, south): To move between rooms, type 'move <direction>'. Example: 'move south'",
+    "\t4. look: To look around the room and get the details about the current room, type 'look'",
+    "\t5. quit: To exit the game anytime, type 'quit'.",
+    "\t6. restart: To clear all the current settings and restart a new game, type 'restart'.\n",
+    "For more questions, call 1-800-722-FINE to talk to a representative.",
+    "=================================================================================================="]
 }
 

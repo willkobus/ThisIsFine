@@ -5,6 +5,7 @@ import game.rooms.Room;
 import java.util.Scanner;
 
 import static game.AsciiArts.asciiArtLose;
+import static game.readFromJSONSeparateLines.welcomeText;
 
 class ActionParser {
     private String[] moveString;
@@ -61,6 +62,9 @@ class ActionParser {
                         quit = true;
                         validInput = true;
                         asciiArtLose();
+                        break;
+                    case "help":
+                        welcomeText("help");
                         break;
                     default:
                         System.out.println("Sorry that is not a valid input\nIf you need help just type help!");
