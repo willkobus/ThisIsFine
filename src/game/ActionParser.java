@@ -17,7 +17,7 @@ class ActionParser {
     public boolean playerMove(Player player) throws Exception{
         boolean quit = false;
 
-        while (!quit) {
+        while (!quit && !player.checkWin()) {
             while (!validInput) {
                 Room room = RoomFactory.getRoom(player);
                 System.out.println("Enter your action (example: move east, take <item name>) > ");
@@ -32,7 +32,7 @@ class ActionParser {
                         validInput = Moves.take(player, moveString[1]);
                         break;
                     case "use":
-                        validInput = Moves.item(player, moveString);
+                        validInput = Moves.use(player, moveString[1]);
                         break;
                     case "pull":
                         validInput = Moves.puzzle(room.getPuzzle(), moveString);

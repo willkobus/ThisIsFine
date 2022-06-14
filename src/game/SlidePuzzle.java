@@ -3,6 +3,8 @@ package game;
 import java.util.ArrayList;
 import java.util.List;
 
+import static game.ColorEnums.*;
+
 class SlidePuzzle extends Puzzle {
     private List<Integer> grid;
     private int gridSize = 9;
@@ -109,6 +111,11 @@ class SlidePuzzle extends Puzzle {
         return isAdjacent;
     }
 
+    @Override
+    public boolean isSolved() {
+        return solved;
+    }
+
     private boolean checkSolved() {
         boolean isSolved = true;
 
@@ -121,19 +128,22 @@ class SlidePuzzle extends Puzzle {
         return isSolved;
     }
 
-    public boolean isSolved() {
-        return solved;
-    }
-
     public String toString() {
         StringBuilder str = new StringBuilder();
+        String color = null;
 
         for (int i = 0; i < gridSize; i++) {
             if (grid.get(i) == 9) {
                 str.append("  ");
             }
             else {
-                str.append(grid.get(i)).append(" ");
+                if (grid.get(i) == i + 1) {
+                    color = GREEN_FONT;
+                }
+                else {
+                    color = RED_FONT;
+                }
+                str.append(color).append(grid.get(i)).append(" ").append(RESET_TEXT);
             }
 
             if (i > 0 && i % 3 == 2) {
