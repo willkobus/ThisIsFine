@@ -6,8 +6,8 @@ import java.util.List;
 import static game.ColorEnums.*;
 
 class SlidePuzzle extends Puzzle {
-    private List<Integer> grid;
-    private int gridSize = 9;
+    private final List<Integer> grid;
+    private final int gridSize = 9;
     private boolean solved = false;
 
     public SlidePuzzle() {

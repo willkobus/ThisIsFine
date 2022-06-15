@@ -5,8 +5,12 @@ import org.json.simple.parser.JSONParser;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.ArrayList;
 
 public abstract class JSONRead {
+    private static final String ROOMS_FILEPATH = "resources/rooms.json";
+    private static final String GAME_TEXT_FILEPATH = "resources/gameText.json";
+
     public static JSONObject readJSON(String filepath) throws Exception{
         Object obj = new JSONParser().parse(new FileReader(filepath));
 
@@ -16,36 +20,17 @@ public abstract class JSONRead {
         return jo;
     }
 
-    public static String getJSONFromFile(String filename){
-        String jsonTextFromWelcome = "";
-        try{
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(filename));
+    public static void gameText(String textSource) throws Exception {
+        int delay1 = 300;
 
-            String line;
-            while((line = bufferedReader.readLine()) != null){
-                jsonTextFromWelcome+=line+"\n";
-            }
-        }catch (Exception e) {
-            e.printStackTrace();
+        JSONObject gameTextObject= JSONRead.readJSON(GAME_TEXT_FILEPATH);
+        ArrayList<String> text = (ArrayList<String>) gameTextObject.get(textSource);
+        for (String line : text){
+            System.out.println(line);
+            Thread.sleep(delay1);
         }
-        return jsonTextFromWelcome;
     }
 
-    // read from gameText.json
-    public static String getJSONFromFileSeparateLines(String filename){
-        String jsonTextFromFileSeparateLines = "";
-        try{
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(filename));
-
-            String line;
-            while ((line = bufferedReader.readLine()) != null){
-                jsonTextFromFileSeparateLines += line + "\n";
-            }
-        } catch (Exception e){
-            e.printStackTrace();
-        }
-        return jsonTextFromFileSeparateLines;
-    }
 }
 
 

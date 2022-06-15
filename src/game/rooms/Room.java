@@ -38,8 +38,7 @@ public class Room {
     }
 
     public void deleteRoomItem(String item) {
-        int removeIndex = items.indexOf(item);
-        items.remove(removeIndex);
+        items.remove(item);
     }
 
     public String getDirection(String desiredDirection){
@@ -91,6 +90,10 @@ public class Room {
 
     public Puzzle getPuzzle() {
         return puzzle;
+    }
+
+    public ArrayList<String> getExits() {
+        return exits;
     }
 
     public void setPuzzle(Puzzle puzzle) {
