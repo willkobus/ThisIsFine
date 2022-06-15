@@ -1,17 +1,20 @@
 package game;
 
-class FourSwitchPuzzle {
-    boolean[] switches = new boolean[4];
+import static game.ColorEnums.*;
+import static game.ColorEnums.RESET_TEXT;
+
+public class FourSwitchPuzzle extends Puzzle {
+    private final boolean[] switches = new boolean[4];
     private boolean solved = false;
 
-    FourSwitchPuzzle() {
+    public FourSwitchPuzzle() {
         switches[0] = true;
         switches[1] = false;
         switches[2] = true;
         switches[3] = false;
     }
 
-    void puzzleAction(int index) {
+    public boolean puzzleAction(int index) {
         if (index == 0) {
             switches[0] = !switches[0];
         }
@@ -32,6 +35,12 @@ class FourSwitchPuzzle {
         }
 
         solved = checkSolved();
+        return true;
+    }
+
+    @Override
+    public boolean isSolved() {
+        return solved;
     }
 
     private boolean checkSolved() {
@@ -46,16 +55,12 @@ class FourSwitchPuzzle {
         return isSolved;
     }
 
-    public boolean isSolved() {
-        return solved;
-    }
-
     private String switchString(boolean b) {
         if (b) {
-            return "X ";
+            return GREEN_FONT +"X " + RESET_TEXT;
         }
         else {
-            return "O ";
+            return RED_FONT + "O " + RESET_TEXT;
         }
     }
 

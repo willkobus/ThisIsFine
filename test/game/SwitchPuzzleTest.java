@@ -36,7 +36,7 @@ public class SwitchPuzzleTest {
     @Test
     public void fiveSwitch_testToString() {
         FiveSwitchPuzzle fivePuzzle = new FiveSwitchPuzzle();
-        System.out.println(fivePuzzle.toString());
+        System.out.println(fivePuzzle);
     }
 
     @Test
@@ -55,6 +55,6 @@ public class SwitchPuzzleTest {
     @Test
     public void fourSwitch_toString() {
         FourSwitchPuzzle fourPuzzle = new FourSwitchPuzzle();
-        System.out.println(fourPuzzle.toString());
+        System.out.println(fourPuzzle);
     }
 }
