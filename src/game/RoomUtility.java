@@ -8,13 +8,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-abstract class RoomFactory {
+abstract class RoomUtility {
     private static JSONObject rooms;
     private static Set<String> keys;
-    private static Map<String,Room> roomMap = new HashMap<>();
+    private static final Map<String,Room> roomMap = new HashMap<>();
 
 
-    protected RoomFactory() throws Exception {
+    protected RoomUtility() throws Exception {
     }
 
     public static void initializeRoom() throws Exception {
@@ -51,10 +51,14 @@ abstract class RoomFactory {
             }
     }
 
-    public static void displayRoomInfo(Player player){
-        System.out.printf("Items in %s: ", player.getCurrentRoom());
-        String room = player.getCurrentRoom();
-        System.out.println(roomMap.get(room).getRoomItems());
+    public static void displayGameInfo(Player player) {
+        Room currentRoom = roomMap.get(player.getCurrentRoom());
+        System.out.println("Move total: " + player.getMoveCount());
+        System.out.println("Your inventory: " + player.getInventory());
+        System.out.println("You are in the: " + player.getCurrentRoom());
+        System.out.println(currentRoom.getDescription());
+        System.out.printf("Items in %s: %s\n",currentRoom.getName(), currentRoom.getRoomItems());
+        System.out.printf("Ways out of %s: %s\n",currentRoom.getName(), currentRoom.getExits());
     }
 
     public static void deleteFromRoom(Player player, String item){

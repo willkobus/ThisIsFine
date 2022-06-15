@@ -3,7 +3,7 @@ package game;
 import static game.ColorEnums.*;
 
 class EightSwitchPuzzle extends Puzzle {
-    private boolean[] switches = new boolean[8];
+    private final boolean[] switches = new boolean[8];
     private boolean solved = false;
 
     public EightSwitchPuzzle() {

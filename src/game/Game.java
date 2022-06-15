@@ -4,7 +4,7 @@ import game.rooms.Room;
 
 import java.util.Map;
 
-import static game.readFromJSONSeparateLines.welcomeText;
+
 
 public class Game {
 
@@ -26,21 +26,20 @@ public class Game {
     }
 
     private boolean playGame() throws Exception {
-        RoomFactory.initializeRoom();
-        player.playerInfo();
-        RoomFactory.displayRoomInfo(player);
+        RoomUtility.initializeRoom();
+        RoomUtility.displayGameInfo(player);
         return !actionParser.playerMove(player);
     }
 
     // Welcome method
     public static void welcome() throws Exception {
         AsciiArts.asciiArtThisIsFine();
-        welcomeText("welcome");
-        welcomeText("gameRules");
+        JSONRead.gameText("welcome");
+        JSONRead.gameText("gameRules");
     }
 
     public static void winScreen() throws Exception {
         //welcomeTextFromSeparateLines("welcome");
-        System.out.println("YOU WIN");
+        AsciiArts.asciiArtWin();
     }
 }

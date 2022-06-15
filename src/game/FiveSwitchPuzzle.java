@@ -4,7 +4,7 @@ import static game.ColorEnums.*;
 import static game.ColorEnums.RESET_TEXT;
 
 class FiveSwitchPuzzle extends Puzzle {
-    private boolean[] switches = new boolean[5];
+    private final boolean[] switches = new boolean[5];
     private boolean solved = false;
 
     public FiveSwitchPuzzle() {
