@@ -56,7 +56,7 @@ public class SlidePuzzleTest {
     @Test
     public void shuffle() {
         puzzle = new SlidePuzzle(5);
-        System.out.println(puzzle.toString());
+        System.out.println(puzzle);
     }
 
     @Test

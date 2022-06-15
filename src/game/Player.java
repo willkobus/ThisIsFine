@@ -57,12 +57,4 @@ public class Player {
         return hasWon;
     }
 
-    public void playerInfo() throws Exception{
-        JSONObject room = JSONRead.readJSON("resources/rooms.json");
-        JSONObject currentRoom = (JSONObject) room.get(getCurrentRoom());
-        System.out.println("Move Total: " + getMoveCount());
-        System.out.println("You are in the: " + getCurrentRoom() + ". " + currentRoom.get("description"));
-        System.out.println("Your Inventory: " + getInventory());
-        System.out.println(currentRoom.get("exits"));
-    }
 }

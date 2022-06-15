@@ -5,22 +5,22 @@ import game.rooms.Room;
 import java.util.Scanner;
 
 import static game.AsciiArts.asciiArtLose;
-import static game.readFromJSONSeparateLines.welcomeText;
+
 
 class ActionParser {
     private String[] moveString;
     private String moveChoice;
     private boolean validInput = false;
 
-    private Scanner scanner = new Scanner(System.in);
-    private TextParser parser = new TextParser();
+    private final Scanner scanner = new Scanner(System.in);
+    private final TextParser parser = new TextParser();
     
     public boolean playerMove(Player player) throws Exception{
         boolean quit = false;
 
         while (!quit && !player.checkWin()) {
             while (!validInput) {
-                Room room = RoomFactory.getRoom(player);
+                Room room = RoomUtility.getRoom(player);
                 System.out.println("Enter your action (example: move east, take <item name>) > ");
                 String action = scanner.nextLine();
                 moveString = parser.parseInput(action);
@@ -45,10 +45,9 @@ class ActionParser {
                             player.setMoveCount(player.getMoveCount() + 1);
                             if (room.getPuzzle().isSolved() && room.getRoomItems().contains("key")) {
                                 player.addToInventory("key");
-                                RoomFactory.getRoom(player).deleteRoomItem("key");
+                                RoomUtility.getRoom(player).deleteRoomItem("key");
                                 System.out.println("You solved the puzzle! You grab the key.");
-                                player.playerInfo();
-                                RoomFactory.displayRoomInfo(player);
+                                RoomUtility.displayGameInfo(player);
                             }
                         }
                         break;
@@ -64,7 +63,7 @@ class ActionParser {
                         asciiArtLose();
                         break;
                     case "help":
-                        welcomeText("help");
+                        JSONRead.gameText("help");
                         break;
                     default:
                         System.out.println("Sorry that is not a valid input\nIf you need help just type help!");
