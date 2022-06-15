@@ -50,7 +50,7 @@ public class AsciiArts {// ASCII Art method
         Graphics2D graphics = (Graphics2D) g;
         graphics.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,
                 RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
-        graphics.drawString("Y O U   W I N", 5, 20);
+        graphics.drawString("YOU  WIN", 5, 20);
 
 
         for (int y = 0; y < height; y++) {

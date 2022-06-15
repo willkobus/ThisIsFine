@@ -4,6 +4,7 @@ import game.rooms.Room;
 
 import java.util.Map;
 
+import static game.AsciiArts.asciiArtWin;
 import static game.readFromJSONSeparateLines.welcomeText;
 
 public class Game {
@@ -41,6 +42,7 @@ public class Game {
 
     public static void winScreen() throws Exception {
         //welcomeTextFromSeparateLines("welcome");
-        System.out.println("YOU WIN");
+        //System.out.println("YOU WIN");
+        asciiArtWin();
     }
 }
