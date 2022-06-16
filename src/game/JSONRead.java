@@ -4,10 +4,8 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public abstract class JSONRead {
@@ -19,12 +17,14 @@ public abstract class JSONRead {
 
         Object obj = null;
         try {
-            obj = new JSONParser().parse(new FileReader(filepath));
-        } catch (IOException e) {
+            InputStreamReader streamReader = new InputStreamReader(JSONParser.class.getResourceAsStream("/" + filepath), StandardCharsets.UTF_8);
+            obj = new JSONParser().parse(streamReader);
+        } catch (Exception e) {
+            System.out.println(e.getLocalizedMessage());
             System.out.println(ERROR_MESSAGE);
-        } catch (ParseException e) {
-            System.out.println(ERROR_MESSAGE);
+            e.printStackTrace();
         }
+
 
         // typecasting obj to JSONObject
         JSONObject jo = (JSONObject) obj;
