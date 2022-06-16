@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public abstract class JSONRead {
     private static final String ROOMS_FILEPATH = "resources/rooms.json";
-    private static final String GAME_TEXT_FILEPATH = "esources/gameText.json";
+    private static final String GAME_TEXT_FILEPATH = "resources/gameText.json";
     private static final String ERROR_MESSAGE = "File not found";
 
     public static JSONObject readJSON(String filepath) {

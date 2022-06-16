@@ -1,6 +1,5 @@
 package game;
 
-import com.apps.util.Console;
 import game.rooms.Room;
 
 public class Moves {
