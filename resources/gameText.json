@@ -35,6 +35,10 @@
     "\t5. quit: To exit the game anytime, type 'quit'.",
     "\t6. restart: To clear all the current settings and restart a new game, type 'restart'.\n",
     "For more questions, call 1-800-722-FINE to talk to a representative.",
-    "=================================================================================================="]
+    "=================================================================================================="],
+  "commands": {
+    "move" : ["go"],
+    "take" : ["get", "pick up", "grab"]
+  }
 }
 
