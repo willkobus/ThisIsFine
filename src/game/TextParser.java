@@ -12,7 +12,7 @@ class TextParser {
         ArrayList<String> inputList = new ArrayList<>(Arrays.asList(input.split(" ")));
 
 
-        JSONObject jsonObj = JSONRead.readJSON("resources/gameText.json");
+        JSONObject jsonObj = JSONRead.readJSON("gameText.json");
         JSONObject commandObj = (JSONObject) jsonObj.get("commands");
         Set<String> commandSet = commandObj.keySet();
 

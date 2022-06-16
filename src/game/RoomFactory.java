@@ -14,7 +14,7 @@ abstract class RoomFactory {
     private static final Map<String, Room> roomMap = new HashMap<>();
 
     public static void initializeRoom() {
-        rooms = JSONRead.readJSON("resources/rooms.json");
+        rooms = JSONRead.readJSON("rooms.json");
         keys = rooms.keySet();
 
         for (String name : keys) {
