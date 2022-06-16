@@ -55,12 +55,12 @@ public class FourSwitchPuzzle extends Puzzle {
         return isSolved;
     }
 
-    private String switchString(boolean b) {
+    private String switchString(boolean b, int index) {
         if (b) {
-            return GREEN_FONT +"X " + RESET_TEXT;
+            return GREEN_FONT + index + " " + RESET_TEXT;
         }
         else {
-            return RED_FONT + "O " + RESET_TEXT;
+            return RED_FONT + index + " " + RESET_TEXT;
         }
     }
 
@@ -68,7 +68,7 @@ public class FourSwitchPuzzle extends Puzzle {
         StringBuilder str = new StringBuilder();
 
         for (int i = 0; i < 4; i++) {
-            str.append(switchString(switches[i]));
+            str.append(switchString(switches[i], i));
         }
 
         return str.toString();

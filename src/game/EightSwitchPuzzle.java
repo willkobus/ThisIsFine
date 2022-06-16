@@ -57,12 +57,12 @@ class EightSwitchPuzzle extends Puzzle {
         return isSolved;
     }
 
-    private String switchString(boolean b) {
+    private String switchString(boolean b, int index) {
         if (b) {
-            return GREEN_FONT +"X " + RESET_TEXT;
+            return GREEN_FONT + index + " " + RESET_TEXT;
         }
         else {
-            return RED_FONT + "O " + RESET_TEXT;
+            return RED_FONT + index + " " + RESET_TEXT;
         }
     }
 
@@ -70,13 +70,13 @@ class EightSwitchPuzzle extends Puzzle {
         StringBuilder str = new StringBuilder();
 
         for (int i = 0; i <= 2; i++) {
-            str.append(switchString(switches[i]));
+            str.append(switchString(switches[i], i));
         }
         str.append("\n");
-        str.append(switchString(switches[7]) + "  ");
-        str.append(switchString(switches[3]) + "\n");
+        str.append(switchString(switches[7], 7) + "  ");
+        str.append(switchString(switches[3], 3) + "\n");
         for (int i = 6; i >= 4; i--) {
-            str.append(switchString(switches[i]));
+            str.append(switchString(switches[i], i));
         }
         return str.toString();
     }
