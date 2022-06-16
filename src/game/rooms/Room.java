@@ -21,7 +21,7 @@ public class Room {
     String west;
 
 
-    public Room(String name, String description, String detailedDescription, ArrayList<String> items, ArrayList<String> exits) throws Exception{
+    public Room(String name, String description, String detailedDescription, ArrayList<String> items, ArrayList<String> exits) {
         this.name = name;
         this.description = description;
         this.detailedDescription = detailedDescription;
