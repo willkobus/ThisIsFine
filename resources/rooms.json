@@ -1,8 +1,8 @@
 {
- "breaker room": {
-   "name": "breaker room",
+ "utility room": {
+   "name": "utility room",
    "description" : "You find yourself in the breaker room with only emergency lights illuminating the area.",
-   "detailed": "Next to you is a clear box with a key inside. You try to open the box but its locked. It looks like there is a latch powered by electricity. Judging by the activation of the emergency lights it looks like the room has no power. On the opposite wall you can make out a series of breakers. As you approach the breaker you hear a disembodied voice that says 'If you want power, get all these breakers turned on. PULL a switch to activate others. Switches start at 0 and count up from there in a clockwise order.'",
+   "detailed": "Next to you is a clear box with a key inside. You try to open the box but its locked. It looks like there is a latch powered by electricity. Judging by the activation of the emergency lights it looks like the room has no power. On the opposite wall you can make out a series of breakers. As you approach the breaker you hear the instructions over the intercom \"If you want power, get all these breakers turned on. PULL a switch to activate others. Switches start at 0 and count up from there in a clockwise order.\"",
    "items": ["key"],
    "south" : "lobby",
    "exits" : ["South Exit: Lobby"],
@@ -13,9 +13,37 @@
     "description": "The entrance and exit to the building. Also where you instantly regretted volunteering to be a test subject.",
     "detailed" : "There is a locked door that stands between you and freedom. A note next to the door tells you that to open it you must go into the building, obtain all the keys, and return to this room and USE the keys to unlock the door and leave. There is a plant in the corner. Perhaps a ficus? There is also an umbrella for some reason.",
     "items": ["plant", "umbrella"],
-    "north": "breaker room",
-    "south": "exit",
-    "exits" : ["North Exit: Breaker Room"]
-
+    "north": "utility room",
+    "east": "break room",
+    "west": "office space",
+    "exits" : ["North Exit: Utility Room", "East Exit: Break Room", "West Exit: Office Space"]
+  },
+  "break room": {
+    "name": "break room",
+    "description" : "You have entered the break room. Help yourself to the complimentary cup of coffee and cookie.",
+    "detailed": "As you look around you see a very cookie cutter break room. Round plastic table with two plastic chairs, microwave with a dial instead of a number pad, and various fixings for coffee. Everything appears to be normal except the communal fridge has a weird lock on it. As you approach the intercom crackles and a voice tells you that one of the required keys is inside the fridge. Why is it in the fridge? To protect it from the fire of course!",
+    "items": ["key","coffee","cookie"],
+    "south" : "supply closet",
+    "west": "lobby",
+    "exits" : ["South Exit: Supply Closet", "West Exit: Lobby"],
+    "puzzle" : "slide"
+  },
+  "supply closet": {
+    "name": "supply closet",
+    "description" : "Closet filled with pens and other other office supplies. Do not take the red stapler.",
+    "detailed": "In the neatly organized supply closet a mysterious box immediately catches your eye. Whoever is monitoring this trial notices you starting at it and once again speaks over the intercom, \"The key you seek is inside the box. Use the switches to unlock the box and receive another precious key!\"",
+    "items": ["key"],
+    "north" : "break room",
+    "exits" : ["North Exit: Break Room"],
+    "puzzle" : "four"
+  },
+  "office space": {
+    "name": "office space",
+    "description" : "Cubicles as far as the eye can see. You instantly get a case of the Monday's.",
+    "detailed": "As you wander around the sea of gray cubicles you hear a beeping coming from one of the cubicles. When you find the noisy cube you notice a switchboard on the desk. The intercom comes to life and tells says \"The switchboard is linked to a drawer in the desk. If you are able to get all of the lights on the phone to turn green, the drawer will unlock and you will be one step closer to getting out of here with your eyebrows!\"",
+    "items": ["key"],
+    "east" : "lobby",
+    "exits" : ["East Exit: Lobby"],
+    "puzzle" : "five"
   }
 }

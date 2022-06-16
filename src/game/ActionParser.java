@@ -1,5 +1,6 @@
 package game;
 
+import com.apps.util.Console;
 import game.rooms.Room;
 
 import java.util.Scanner;
@@ -20,12 +21,11 @@ class ActionParser {
 
         while (!quit && !player.checkWin()) {
             while (!validInput) {
-
                 Room room = RoomUtility.getRoom(player);
                 System.out.println("Enter your action (example: move east, take <item name>) > ");
                 String action = scanner.nextLine();
                 moveString = parser.parseInput(action);
-
+                Console.clear();
                 switch (moveString[0]) {
                     case "move":
                         validInput = Moves.move(player, moveString[1].toLowerCase());

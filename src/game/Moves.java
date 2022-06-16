@@ -75,7 +75,7 @@ public class Moves {
         
         Room room = RoomUtility.getRoom(player);
         if (room.getRoomItems().size() > 0 && room.getRoomItems().contains(item)) {
-            if(room.getName().equals("breaker room") && item.equals("key")){
+            if(room.getName() != "lobby" && item.equals("key")){
                 System.out.println("The key cannot be picked up until the puzzle is solved");
             }
             else {
