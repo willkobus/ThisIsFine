@@ -15,6 +15,7 @@ public class FourSwitchPuzzle extends Puzzle {
     }
 
     public boolean puzzleAction(int index) {
+        index--;
         if (index == 0) {
             switches[0] = !switches[0];
         }
@@ -68,7 +69,7 @@ public class FourSwitchPuzzle extends Puzzle {
         StringBuilder str = new StringBuilder();
 
         for (int i = 0; i < 4; i++) {
-            str.append(switchString(switches[i], i));
+            str.append(switchString(switches[i], i + 1));
         }
 
         return str.toString();
