@@ -1,5 +1,6 @@
 package game;
 
+import com.apps.util.Console;
 import game.rooms.Room;
 
 public class Moves {
@@ -8,6 +9,7 @@ public class Moves {
 
 
     public static boolean move(Player player, String direction) {
+        
         int moveCount = player.getMoveCount();
         Room room = RoomUtility.getRoom(player);
 
@@ -31,6 +33,7 @@ public class Moves {
     }
 
     public static boolean use(Player player, String item) {
+        
         if (player.getInventory().contains(item)) {
             System.out.println("You have used " + item);
 
@@ -69,7 +72,8 @@ public class Moves {
 
     }
 
-    public static boolean take(Player player, String item) throws Exception {
+    public static boolean take(Player player, String item) {
+        
         Room room = RoomUtility.getRoom(player);
         if (room.getRoomItems().size() > 0 && room.getRoomItems().contains(item)) {
             if(room.getName().equals("breaker room") && item.equals("key")){
@@ -88,7 +92,8 @@ public class Moves {
         return true;
     }
 
-    public static boolean restart() throws Exception {
+    public static boolean restart() {
+        
         System.out.println();
         System.out.println("New Game started. Move counter and inventory reset, and you have been returned to the starting area\n");
         Game game = new Game();
@@ -97,6 +102,7 @@ public class Moves {
     }
 
     public static boolean look(Player player) {
+        
         Room room = RoomUtility.getRoom(player);
         System.out.println();
         System.out.println(room.getDetailedDescription());
