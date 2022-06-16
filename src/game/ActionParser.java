@@ -10,7 +10,6 @@ import static game.AsciiArts.asciiArtLose;
 
 class ActionParser {
     private String[] moveString;
-    private String moveChoice;
     private boolean validInput = false;
 
     private final Scanner scanner = new Scanner(System.in);
@@ -25,7 +24,9 @@ class ActionParser {
                 System.out.println("Enter your action (example: move east, take <item name>) > ");
                 String action = scanner.nextLine();
                 moveString = parser.parseInput(action);
+
                 Console.clear();
+
                 switch (moveString[0]) {
                     case "move":
                         validInput = Moves.move(player, moveString[1].toLowerCase());

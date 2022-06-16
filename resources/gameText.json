@@ -37,7 +37,13 @@
     "=================================================================================================="],
   "commands": {
     "move" : ["go"],
-    "take" : ["get", "pick up", "grab"]
+    "take" : ["get", "pick up", "grab"],
+    "use" : [],
+    "pull" : ["activate"],
+    "look" : ["inspect"],
+    "restart" : ["start over"],
+    "quit" : ["exit", "close"],
+    "help" : ["?"]
   }
 }
 
