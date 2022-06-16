@@ -42,7 +42,7 @@
     "use" : [],
     "pull" : ["activate"],
     "look" : ["inspect"],
-    "restart" : "start over"],
+    "restart" : ["start over"],
     "quit" : ["exit", "close"],
     "help" : ["?"]
   }
