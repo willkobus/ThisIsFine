@@ -14,7 +14,7 @@ public class Player {
     private int moveCount;
     private boolean hasWon = false;
 
-    public Player() throws Exception {
+    public Player() {
         currentRoom = "lobby";
         inventory = new ArrayList<>();
         moveCount = 0;

@@ -52,24 +52,24 @@ class FiveSwitchPuzzle extends Puzzle {
         return isSolved;
     }
 
-    private String switchString(boolean b) {
+    private String switchString(boolean b, int index) {
         if (b) {
-            return GREEN_FONT +"X " + RESET_TEXT;
+            return GREEN_FONT + index + " " + RESET_TEXT;
         }
         else {
-            return RED_FONT + "O " + RESET_TEXT;
+            return RED_FONT + index + " " + RESET_TEXT;
         }
     }
 
     public String toString() {
         StringBuilder str = new StringBuilder();
 
-        str.append("  " + switchString(switches[0]) + "\n");
+        str.append("  " + switchString(switches[0], 0) + "\n");
 
-        str.append(switchString(switches[4]) + "  ");
-        str.append(switchString(switches[1]) + "\n ");
-        str.append(switchString(switches[3]));
-        str.append(switchString(switches[2]));
+        str.append(switchString(switches[4], 4) + "  ");
+        str.append(switchString(switches[1], 1) + "\n ");
+        str.append(switchString(switches[3], 3));
+        str.append(switchString(switches[2], 2));
 
         return str.toString();
     }
