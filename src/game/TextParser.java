@@ -11,6 +11,11 @@ class TextParser {
         input = input.toLowerCase();
         ArrayList<String> inputList = new ArrayList<>(Arrays.asList(input.split(" ")));
 
+        if (inputList.size() > 2){
+            inputList.set(0,inputList.get(0) + " " + inputList.get(1));
+            inputList.remove(1);
+        }
+
 
         JSONObject jsonObj = JSONRead.readJSON("gameText.json");
         JSONObject commandObj = (JSONObject) jsonObj.get("commands");
