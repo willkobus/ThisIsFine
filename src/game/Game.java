@@ -29,6 +29,9 @@ public class Game {
         Scanner scan = new Scanner(System.in);
         AsciiArts.asciiArtThisIsFine();
         JSONRead.gameText("welcome");
+
+        musicPlayer.playFireMusic();
+
         System.out.println();
         System.out.println("Type [Y] to read game rules OR type any key to skip: ");
         String response = scan.next();
@@ -39,7 +42,6 @@ public class Game {
     }
 
     public static void winScreen() {
-        //welcomeTextFromSeparateLines("welcome");
         AsciiArts.asciiArtWin();
     }
 }
