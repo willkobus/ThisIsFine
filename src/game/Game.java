@@ -30,7 +30,7 @@ public class Game {
         AsciiArts.asciiArtThisIsFine();
         JSONRead.gameText("welcome");
 
-        musicPlayer.playFireMusic();
+        MusicPlayer.playFireMusic();
 
         System.out.println();
         System.out.println("Type [Y] to read game rules OR type any key to skip: ");
