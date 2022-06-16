@@ -1,10 +1,6 @@
 package game;
 
-import game.rooms.Room;
-
-import java.util.Map;
-
-
+import java.util.Scanner;
 
 public class Game {
 
@@ -30,9 +26,16 @@ public class Game {
 
     // Welcome method
     public static void welcome() {
+        Scanner scan = new Scanner(System.in);
         AsciiArts.asciiArtThisIsFine();
         JSONRead.gameText("welcome");
-        JSONRead.gameText("gameRules");
+        System.out.println();
+        System.out.println("Type [Y] to read game rules OR type any key to skip: ");
+        String response = scan.next();
+
+        if (response.matches("(?i)y")) {
+            JSONRead.gameText("gameRules");
+        }
     }
 
     public static void winScreen() {
