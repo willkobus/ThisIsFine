@@ -17,7 +17,7 @@ class ActionParser {
     public boolean playerMove(Player player) {
         boolean quit = false;
 
-        while (!quit && !player.checkWin()) {
+        while (!quit && !player.checkWin() && !player.checkLose()) {
             while (!validInput) {
                 Room room = RoomUtility.getRoom(player);
                 System.out.println("Enter your action (example: move east, take <item name>) > ");

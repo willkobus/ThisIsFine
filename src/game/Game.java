@@ -16,7 +16,11 @@ public class Game {
         playGame();
 
         if (player.checkWin()) {
+            Console.clear();
             winScreen();
+        } else if (player.checkLose()) {
+            Console.clear();
+            loseScreen();
         }
     }
 
@@ -45,5 +49,9 @@ public class Game {
 
     public static void winScreen() {
         AsciiArts.asciiArtWin();
+    }
+
+    public static void loseScreen() {
+        AsciiArts.asciiArtLose();
     }
 }
