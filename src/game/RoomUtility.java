@@ -1,7 +1,5 @@
 package game;
 
-import game.rooms.Room;
-
 import java.util.Map;
 
 abstract class RoomUtility {

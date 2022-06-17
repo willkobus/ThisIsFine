@@ -1,4 +1,4 @@
-package game.rooms;
+package game;
 
 import game.JSONRead;
 import game.Puzzle;
