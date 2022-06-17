@@ -1,14 +1,16 @@
 package game;
 
+import com.apps.util.Console;
+
 import java.util.Scanner;
 
 public class Game {
-
     Player player = new Player();
     ActionParser actionParser = new ActionParser();
 
-
     public void execute() {
+        Console.clear();
+
         welcome();
 
         playGame();

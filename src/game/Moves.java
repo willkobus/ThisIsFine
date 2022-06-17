@@ -1,22 +1,18 @@
 package game;
 
-import game.rooms.Room;
-
 public class Moves {
-    private final static int REQUIRED_KEYS = 1;
+    private final static int REQUIRED_KEYS = 3;
     private final static String EXIT_ROOM = "lobby";
 
-
     public static boolean move(Player player, String direction) {
-        
         int moveCount = player.getMoveCount();
         Room room = RoomUtility.getRoom(player);
 
-        String destRoom;
+        String destinationRoom;
 
         if (room.getDirection(direction) != null) {
-            destRoom = room.getDirection(direction);
-            player.setCurrentRoom(destRoom);
+            destinationRoom = room.getDirection(direction);
+            player.setCurrentRoom(destinationRoom);
 
             moveCount ++;
             player.setMoveCount(moveCount);
@@ -32,7 +28,6 @@ public class Moves {
     }
 
     public static boolean use(Player player, String item) {
-        
         if (player.getInventory().contains(item)) {
             System.out.println("You have used " + item);
 
@@ -72,10 +67,9 @@ public class Moves {
     }
 
     public static boolean take(Player player, String item) {
-        
         Room room = RoomUtility.getRoom(player);
         if (room.getRoomItems().size() > 0 && room.getRoomItems().contains(item)) {
-            if(room.getName() != "lobby" && item.equals("key")){
+            if(!room.getName().equals("lobby") && item.equals("key")){
                 System.out.println("The key cannot be picked up until the puzzle is solved");
             }
             else {
@@ -85,14 +79,13 @@ public class Moves {
             }
         }
         else {
-            System.out.println(item + "cannot be picked up. Either room is empty or item is not in room");
+            System.out.printf("\"%s\" cannot be picked up. Either room is empty or item is not in room", item);
         }
         RoomUtility.displayGameInfo(player);
         return true;
     }
 
     public static boolean restart() {
-        
         System.out.println();
         System.out.println("New Game started. Move counter and inventory reset, and you have been returned to the starting area\n");
         Game game = new Game();
@@ -101,7 +94,6 @@ public class Moves {
     }
 
     public static boolean look(Player player) {
-        
         Room room = RoomUtility.getRoom(player);
         System.out.println();
         System.out.println(room.getDetailedDescription());

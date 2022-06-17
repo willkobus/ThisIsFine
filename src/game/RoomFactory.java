@@ -1,6 +1,5 @@
 package game;
 
-import game.rooms.Room;
 import org.json.simple.JSONObject;
 
 import java.util.ArrayList;
