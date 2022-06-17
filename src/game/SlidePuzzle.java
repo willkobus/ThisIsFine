@@ -154,4 +154,10 @@ class SlidePuzzle extends Puzzle {
 
         return str.toString();
     }
+
+    @Override
+    public String description() {
+        return CYAN_FONT + "\nSLIDE" + RESET_TEXT + " or " + CYAN_FONT + "PUSH" + RESET_TEXT  + " a number [push 1] to push it into the open space. " +
+                "You will receive a key once all of the numbers are in the" + GREEN_FONT + " correct position.\n" + RESET_TEXT;
+    }
 }
