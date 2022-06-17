@@ -6,6 +6,8 @@ import com.apps.util.Console;
 import java.util.Scanner;
 
 import static game.AsciiArts.asciiArtQuit;
+import static game.MusicPlayer.playFireMusic;
+import static game.MusicPlayer.stopFireMusic;
 
 
 class ActionParser {
@@ -67,6 +69,12 @@ class ActionParser {
                         break;
                     case "help":
                         JSONRead.gameText("help");
+                        break;
+                    case "musicon":
+                        playFireMusic();
+                        break;
+                    case "musicoff":
+                        stopFireMusic();
                         break;
                     default:
                         System.out.println("Sorry that is not a valid input\nIf you need help just type help!");
