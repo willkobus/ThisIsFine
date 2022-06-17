@@ -18,7 +18,7 @@ class MusicPlayer {
                 clip = AudioSystem.getClip();
                 clip.open(audioIn);
 
-                // Loop fire music to play it continuously throughout the game
+                // Loop fire music to play it continuously throughout the game.
                 clip.loop(Clip.LOOP_CONTINUOUSLY);
             }
         } catch (Exception e) {
