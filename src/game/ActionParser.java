@@ -1,7 +1,8 @@
 package game;
 
-import com.apps.util.Console;
+
 import game.rooms.Room;
+import com.apps.util.Console;
 
 import java.util.Scanner;
 

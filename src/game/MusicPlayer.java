@@ -15,6 +15,9 @@ class MusicPlayer {
                 clip = AudioSystem.getClip();
                 clip.open(audioIn);
                 clip.start();
+                clip.loop(Clip.LOOP_CONTINUOUSLY);
+
+
             }
         } catch (Exception e) {
             e.printStackTrace();
