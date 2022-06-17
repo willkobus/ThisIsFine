@@ -1,6 +1,8 @@
 package game;
 
-import javax.sound.sampled.*;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import java.io.BufferedInputStream;
 import java.io.InputStream;
 
@@ -17,12 +19,15 @@ class MusicPlayer {
 
                 clip.start();
 
+
                 // loop music continuously
                 clip.loop(Clip.LOOP_CONTINUOUSLY);
 
                 // turn music on and off
-                FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-                gainControl.setValue(0);
+//                FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+//                gainControl.setValue(0);
+//                JOptionPane.showMessageDialog(null, "Press OK to stop music");
+
 
 
             }

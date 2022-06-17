@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 
 import static game.ColorEnums.*;
 
-public class AsciiArts {// ASCII Art method
+public class AsciiArts {
 
     public static void asciiArtThisIsFine() {
         int width = 100;
@@ -102,8 +102,7 @@ public class AsciiArts {// ASCII Art method
 
     }
 
-    // Quit
-    // Ascii Art YOU LOSE
+    // Ascii Art QUITTER
     public static void asciiArtQuit() {
         int width = 100;
         int height = 30;
