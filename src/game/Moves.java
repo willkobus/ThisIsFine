@@ -1,7 +1,7 @@
 package game;
 
 public class Moves {
-    private final static int REQUIRED_KEYS = 1;
+    private final static int REQUIRED_KEYS = 4;
     private final static String EXIT_ROOM = "lobby";
 
     public static boolean move(Player player, String direction) {
@@ -83,11 +83,9 @@ public class Moves {
     public static boolean take(Player player, String item) {
         Room room = RoomUtility.getRoom(player);
         if (room.getRoomItems().size() > 0 && room.getRoomItems().contains(item)) {
-            if(!room.getName().equals("lobby") && item.equals("key")){
+            if(room.getPuzzle() != null && room.getPuzzle().isSolved()
+                    && item.equalsIgnoreCase("key")){
                 System.out.println("The key cannot be picked up until the puzzle is solved");
-            }
-            if(room.getName().equals("supply closet") && item.equals("stapler")){
-
             }
             else {
                 System.out.println("You have picked up " + item);
