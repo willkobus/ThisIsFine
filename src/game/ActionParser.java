@@ -70,10 +70,10 @@ class ActionParser {
                     case "help":
                         JSONRead.gameText("help");
                         break;
-                    case "musicon":
+                    case "unmute":
                         playFireMusic();
                         break;
-                    case "musicoff":
+                    case "mute":
                         stopFireMusic();
                         break;
                     default:
