@@ -33,6 +33,8 @@ public class Game {
 
     // Welcome method
     public static void welcome() {
+        MusicPlayer.playDoorCloseMusic();
+
         Scanner scan = new Scanner(System.in);
         AsciiArts.asciiArtThisIsFine();
         JSONRead.gameText("welcome");
@@ -45,6 +47,7 @@ public class Game {
 
         if (response.matches("(?i)y")) {
             JSONRead.gameText("gameRules");
+
         }
     }
 
