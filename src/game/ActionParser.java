@@ -1,10 +1,13 @@
 package game;
 
+
 import com.apps.util.Console;
 
 import java.util.Scanner;
 
-import static game.AsciiArts.asciiArtLose;
+import static game.AsciiArts.asciiArtQuit;
+import static game.MusicPlayer.playFireMusic;
+import static game.MusicPlayer.stopFireMusic;
 
 
 class ActionParser {
@@ -62,10 +65,16 @@ class ActionParser {
                     case "quit":
                         quit = true;
                         validInput = true;
-                        asciiArtLose();
+                        asciiArtQuit();
                         break;
                     case "help":
                         JSONRead.gameText("help");
+                        break;
+                    case "unmute":
+                        playFireMusic();
+                        break;
+                    case "mute":
+                        stopFireMusic();
                         break;
                     default:
                         System.out.println("Sorry that is not a valid input\nIf you need help just type help!");
