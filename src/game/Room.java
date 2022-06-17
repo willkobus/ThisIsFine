@@ -1,11 +1,8 @@
 package game;
 
-import game.JSONRead;
-import game.Puzzle;
-import org.json.simple.JSONObject;
+
 
 import java.util.ArrayList;
-import java.util.Map;
 
 public class Room {
 
@@ -39,6 +36,10 @@ public class Room {
 
     public void deleteRoomItem(String item) {
         items.remove(item);
+    }
+
+    public void addRoomItem(String item){
+        items.add(item);
     }
 
     public String getDirection(String desiredDirection){

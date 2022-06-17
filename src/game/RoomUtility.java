@@ -15,12 +15,6 @@ abstract class RoomUtility {
         System.out.printf("Ways out of %s: %s\n", currentRoom.getName(), currentRoom.getExits());
     }
 
-    public static void deleteFromRoom(Player player, String item) {
-        String room = player.getCurrentRoom();
-        roomMap.get(room).deleteRoomItem(item);
-    }
-
-
     public static Room getRoom(Player player) {
         Room room;
         room = roomMap.get(player.getCurrentRoom());

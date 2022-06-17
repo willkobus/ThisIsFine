@@ -70,12 +70,14 @@ class ActionParser {
                     case "help":
                         JSONRead.gameText("help");
                         break;
+                    case "drop":
+                        validInput = Moves.drop(player, moveString[1]);
                     case "unmute":
                         playFireMusic();
                         break;
                     case "mute":
                         stopFireMusic();
-                        break;
+                         break;
                     default:
                         System.out.println("Sorry that is not a valid input\nIf you need help just type help!");
                 }

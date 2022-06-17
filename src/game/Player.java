@@ -29,10 +29,6 @@ public class Player {
         return inventory;
     }
 
-    public void setInventory(ArrayList<String> inventory) {
-        this.inventory = inventory;
-    }
-
     public int getMoveCount() {
         return moveCount;
     }
@@ -46,6 +42,10 @@ public class Player {
 
     public void addToInventory(String item){
         inventory.add(item);
+    }
+
+    public void removeFromInventory(String item){
+        inventory.remove(item);
     }
 
     public void wins() {
