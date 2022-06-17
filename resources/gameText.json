@@ -21,7 +21,8 @@
     "\t6. pull <number>: To play puzzles in the room, type 'pull' and a number",
     "\t7. musicon: Turns on the music",
     "\t8. musicoff: Turns off the music",
-    "\t9. restart (restarts new game, loses all current settings)",
+    "\t9. drop: Drops the item in the inventory",
+    "\t10. restart (restarts new game, loses all current settings)",
     "Goal: Go to different rooms, solve the puzzles and get the keys to escape the burning building.",
     "REMEMBER, you have to finish this task within a certain number of steps! Otherwise ...",
     "=================================================================================================="],
@@ -38,7 +39,8 @@
     "\t6. pull <number>: To play puzzles in the room, type 'pull' and a number",
     "\t7. musicon: Turns on the music",
     "\t8. musicoff: Turns off the music",
-    "\t9. restart: To clear all the current settings and restart a new game, type 'restart'.\n",
+    "\t9. drop: Drops the item in the inventory",
+    "\t10. restart: To clear all the current settings and restart a new game, type 'restart'.\n",
     "For more questions, call 1-800-722-FINE to talk to a representative.",
     "=================================================================================================="],
   "commands": {
@@ -49,9 +51,7 @@
     "look" : ["inspect"],
     "restart" : ["start over"],
     "quit" : ["exit", "close"],
-    "help" : ["?"],
-    "musicon": ["music on", "start music", "play music"],
-    "musicoff": ["music off", "kill music", "stop music"]
+    "help" : ["?"]
   }
 }
 
