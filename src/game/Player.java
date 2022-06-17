@@ -1,14 +1,8 @@
 package game;
 
-//import game.rooms.Lobby;
-
-import org.json.simple.JSONObject;
-
 import java.util.ArrayList;
 
 public class Player {
-//    Room lobby = new Lobby();
-//    private JSONRead jsonReader = new JSONRead();
     private String currentRoom;
     private ArrayList<String> inventory;
     private int moveCount;
@@ -18,7 +12,6 @@ public class Player {
         currentRoom = "lobby";
         inventory = new ArrayList<>();
         moveCount = 0;
-
     }
 
     public String getCurrentRoom() {
@@ -33,10 +26,6 @@ public class Player {
         return inventory;
     }
 
-    public void setInventory(ArrayList<String> inventory) {
-        this.inventory = inventory;
-    }
-
     public int getMoveCount() {
         return moveCount;
     }
@@ -47,6 +36,10 @@ public class Player {
 
     public void addToInventory(String item){
         inventory.add(item);
+    }
+
+    public void removeFromInventory(String item){
+        inventory.remove(item);
     }
 
     public void wins() {
