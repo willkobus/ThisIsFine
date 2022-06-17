@@ -11,7 +11,7 @@ class TextParser {
         input = input.toLowerCase();
         ArrayList<String> inputList = new ArrayList<>(Arrays.asList(input.split(" ")));
 
-        if (inputList.size() > 2){
+        if ((inputList.get(0).equals("sound") || inputList.get(0).equals("music")) || inputList.size() > 2){
             inputList.set(0,inputList.get(0) + " " + inputList.get(1));
             inputList.remove(1);
         }

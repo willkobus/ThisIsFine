@@ -44,10 +44,10 @@
     "For more questions, call 1-800-722-FINE to talk to a representative.",
     "=================================================================================================="],
   "commands": {
-    "move" : ["go"],
+    "move" : ["go","walk","crawl"],
     "take" : ["get", "pick up", "grab"],
-    "use" : [],
-    "pull" : ["activate"],
+    "use" : ["interact","eat","drink"],
+    "pull" : ["activate","press","slide","swap"],
     "look" : ["inspect"],
     "restart" : ["start over"],
     "quit" : ["exit", "close"],
