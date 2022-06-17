@@ -46,6 +46,7 @@ public class Game {
 
         if (response.matches("(?i)y")) {
             JSONRead.gameText("gameRules");
+
         }
     }
 
