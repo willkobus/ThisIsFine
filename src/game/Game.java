@@ -53,5 +53,10 @@ public class Game {
 
     public static void loseScreen() {
         AsciiArts.asciiArtLose();
+        System.out.println("\nYou feel overwhelmed and begin to panic as the heat becomes unbearable and the " +
+                                   "\nflames engulf the walls around you.\n" +
+                                   "Suddenly the flames vanish and you hear a voice.\n" +
+                                   "\t\"That was a good effort but it seems you've run out of time.\n" +
+                                   "\t Perhaps the next volunteer will be successful.\"");
     }
 }
