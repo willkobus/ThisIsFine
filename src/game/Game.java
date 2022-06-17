@@ -18,6 +18,7 @@ public class Game {
         if (player.checkWin()) {
             Console.clear();
             winScreen();
+            System.out.println("You completed the game in: " + player.getMoveCount() + " moves.");
         } else if (player.checkLose()) {
             Console.clear();
             loseScreen();

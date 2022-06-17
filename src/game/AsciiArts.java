@@ -33,7 +33,7 @@ public class AsciiArts {
                 continue;
             }
 
-            System.out.println(PURPLE_TEXT + sb + RESET_TEXT);
+            System.out.println(RED_FONT + sb + RESET_TEXT);
         }
 
     }
@@ -65,7 +65,7 @@ public class AsciiArts {
                 continue;
             }
 
-            System.out.println(GREEN_TEXT + sb + RESET_TEXT);
+            System.out.println(GREEN_FONT + sb + RESET_TEXT);
         }
 
     }
@@ -97,7 +97,7 @@ public class AsciiArts {
                 continue;
             }
 
-            System.out.println(RED_TEXT + sb + RESET_TEXT);
+            System.out.println(RED_FONT + sb + RESET_TEXT);
         }
 
     }
@@ -129,7 +129,7 @@ public class AsciiArts {
                 continue;
             }
 
-            System.out.println(RED_TEXT + sb + RESET_TEXT);
+            System.out.println(RED_FONT + sb + RESET_TEXT);
         }
 
     }

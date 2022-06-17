@@ -1,7 +1,7 @@
 package game;
 
 public class Moves {
-    private final static int REQUIRED_KEYS = 3;
+    private final static int REQUIRED_KEYS = 1;
     private final static String EXIT_ROOM = "lobby";
 
     public static boolean move(Player player, String direction) {
@@ -39,7 +39,7 @@ public class Moves {
                 return true;
             }
             if(item.equals("cookie")){
-                System.out.println("You eat the " + item + ". At least it was chocolate chip.");
+                System.out.println("You eat the " + item + ". Definitely store bought. At least it was chocolate chip.");
                 return true;
             }
 
@@ -85,6 +85,9 @@ public class Moves {
         if (room.getRoomItems().size() > 0 && room.getRoomItems().contains(item)) {
             if(!room.getName().equals("lobby") && item.equals("key")){
                 System.out.println("The key cannot be picked up until the puzzle is solved");
+            }
+            if(room.getName().equals("supply closet") && item.equals("stapler")){
+
             }
             else {
                 System.out.println("You have picked up " + item);
