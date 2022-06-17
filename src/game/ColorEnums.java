@@ -11,4 +11,5 @@ public class ColorEnums {
     public static final String WHITE_TEXT = "\u001B[47m";
     public static final String RED_FONT = "\u001B[31m";
     public static final String GREEN_FONT = "\u001b[32m";
+    public static final String CYAN_FONT = "\u001b[36m";
 }

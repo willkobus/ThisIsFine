@@ -112,6 +112,7 @@ public class Moves {
         System.out.println();
         System.out.println(room.getDetailedDescription());
         if (room.getPuzzle() != null) {
+            System.out.println(RoomUtility.getRoom(player).getPuzzle().description());
             System.out.println(RoomUtility.getRoom(player).getPuzzle().toString());
         }
         System.out.println();
