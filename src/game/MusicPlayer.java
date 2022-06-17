@@ -14,8 +14,15 @@ class MusicPlayer {
             try (AudioInputStream audioIn = AudioSystem.getAudioInputStream(bufferedIn)) {
                 clip = AudioSystem.getClip();
                 clip.open(audioIn);
+
                 clip.start();
+
+                // loop music continuously
                 clip.loop(Clip.LOOP_CONTINUOUSLY);
+
+                // turn music on and off
+                FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+                gainControl.setValue(0);
 
 
             }

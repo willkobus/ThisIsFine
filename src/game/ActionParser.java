@@ -1,12 +1,12 @@
 package game;
 
 
-import game.rooms.Room;
 import com.apps.util.Console;
+import game.rooms.Room;
 
 import java.util.Scanner;
 
-import static game.AsciiArts.asciiArtLose;
+import static game.AsciiArts.asciiArtQuit;
 
 
 class ActionParser {
@@ -64,7 +64,7 @@ class ActionParser {
                     case "quit":
                         quit = true;
                         validInput = true;
-                        asciiArtLose();
+                        asciiArtQuit();
                         break;
                     case "help":
                         JSONRead.gameText("help");
