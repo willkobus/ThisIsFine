@@ -14,7 +14,7 @@ public class Player {
     public Player() {
         currentRoom = "lobby";
         inventory = new ArrayList<>();
-        moveCount = 99;
+        moveCount = 0;
     }
 
     public String getCurrentRoom() {
