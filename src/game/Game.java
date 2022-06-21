@@ -44,6 +44,7 @@ public class Game {
         System.out.println();
         System.out.println("Type [Y] to read game rules OR type any key to skip: ");
         String response = scan.next();
+        Console.clear();
 
         if (response.matches("(?i)y")) {
             JSONRead.gameText("gameRules");
