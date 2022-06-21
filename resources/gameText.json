@@ -47,7 +47,7 @@
     "move" : ["go","walk","crawl"],
     "take" : ["get", "pick up", "grab"],
     "use" : ["interact","eat","drink"],
-    "pull" : ["activate","press","slide","swap"],
+    "pull" : ["activate","press","slide","swap", "push"],
     "look" : ["inspect"],
     "restart" : ["start over"],
     "quit" : ["exit", "close"],
