@@ -1,90 +1,44 @@
 package game;
 
-import game.rooms.Room;
-import org.json.simple.JSONObject;
-
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 abstract class RoomUtility {
-    private static JSONObject rooms;
-    private static Set<String> keys;
-    private static final Map<String,Room> roomMap = new HashMap<>();
-
-
-    protected RoomUtility() throws Exception {
-    }
-
-    public static void initializeRoom() throws Exception {
-        try {
-            rooms = JSONRead.readJSON("resources/rooms.json");
-            keys = rooms.keySet();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        for (String name : keys) {
-            JSONObject currentRoom = (JSONObject) rooms.get(name);
-            String room = (String) currentRoom.get("name");
-
-            Room roomObj = new Room(name,(String) currentRoom.get("description"), (String) currentRoom.get("detailed"),
-                      (ArrayList<String>) currentRoom.get("items"), (ArrayList<String>) currentRoom.get("exits"));
-            if (currentRoom.containsKey("east")) {
-                roomObj.setEast((String) currentRoom.get("east"));
-            }
-            if (currentRoom.containsKey("north")) {
-                roomObj.setNorth((String) currentRoom.get("north"));
-            }
-            if (currentRoom.containsKey("west")) {
-                roomObj.setWest((String) currentRoom.get("west"));
-            }
-            if (currentRoom.containsKey("south")) {
-                roomObj.setSouth((String) currentRoom.get("south"));
-            }
-            if (currentRoom.containsKey("puzzle")) {
-                roomObj.setPuzzle(puzzleHelper((String) currentRoom.get("puzzle")));
-            }
-            roomMap.put(room,roomObj);
-            }
-    }
+    private static final Map<String, Room> roomMap = RoomFactory.getRoomMap();
 
     public static void displayGameInfo(Player player) {
         Room currentRoom = roomMap.get(player.getCurrentRoom());
         System.out.println("Move total: " + player.getMoveCount());
-        System.out.println("Your inventory: " + player.getInventory());
+        System.out.println("Your inventory: ");
+        printArrayListFields(player.getInventory());
         System.out.println("You are in the: " + player.getCurrentRoom());
         System.out.println(currentRoom.getDescription());
-        System.out.printf("Items in %s: %s\n",currentRoom.getName(), currentRoom.getRoomItems());
-        System.out.printf("Ways out of %s: %s\n",currentRoom.getName(), currentRoom.getExits());
+        System.out.println("Items in this room:");
+        printArrayListFields(currentRoom.getRoomItems());
+        System.out.println("Ways out of here:");
+        printArrayListFields(currentRoom.getExits());
     }
 
-    public static void deleteFromRoom(Player player, String item){
-        String room = player.getCurrentRoom();
-        roomMap.get(room).deleteRoomItem(item);
-    }
-
-
-    public static Room getRoom(Player player){
+    public static Room getRoom(Player player) {
         Room room;
         room = roomMap.get(player.getCurrentRoom());
         return room;
     }
 
-    private static Puzzle puzzleHelper(String puzzleType) {
-        switch (puzzleType) {
-            case "eight":
-                return new EightSwitchPuzzle();
-            case "five":
-                return new FiveSwitchPuzzle();
-            case "four":
-                return new FourSwitchPuzzle();
-            case "slide":
-                return new SlidePuzzle();
-            default:
-                return null;
+    private static void printArrayListFields(ArrayList<String> arrayList){
+        if(arrayList.size() > 0) {
+            for (String entry : arrayList) {
+                if (entry.equals("key")){
+                    System.out.println("\t" + ColorEnums.BLUE_FONT + entry.toUpperCase() + ColorEnums.RESET_TEXT);
+                }
+                else {
+                    System.out.println("\t" + ColorEnums.GREEN_FONT + entry + ColorEnums.RESET_TEXT);
+                }
+            }
+        }else{
+            System.out.println("\t" + ColorEnums.RED_FONT + "EMPTY" + ColorEnums.RESET_TEXT);
         }
+        System.out.println();
     }
+
 }

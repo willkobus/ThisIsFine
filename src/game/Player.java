@@ -1,24 +1,20 @@
 package game;
 
-//import game.rooms.Lobby;
-
-import org.json.simple.JSONObject;
 
 import java.util.ArrayList;
 
 public class Player {
-//    Room lobby = new Lobby();
-//    private JSONRead jsonReader = new JSONRead();
+    private static final int MOVE_MAX = 100;
     private String currentRoom;
     private ArrayList<String> inventory;
     private int moveCount;
     private boolean hasWon = false;
+    private boolean hasLost = false;
 
-    public Player() throws Exception {
+    public Player() {
         currentRoom = "lobby";
         inventory = new ArrayList<>();
         moveCount = 0;
-
     }
 
     public String getCurrentRoom() {
@@ -33,20 +29,23 @@ public class Player {
         return inventory;
     }
 
-    public void setInventory(ArrayList<String> inventory) {
-        this.inventory = inventory;
-    }
-
     public int getMoveCount() {
         return moveCount;
     }
 
     public void setMoveCount(int moveCount) {
         this.moveCount = moveCount;
+        if (moveCount > MOVE_MAX) {
+            hasLost = true;
+        }
     }
 
     public void addToInventory(String item){
         inventory.add(item);
+    }
+
+    public void removeFromInventory(String item){
+        inventory.remove(item);
     }
 
     public void wins() {
@@ -57,4 +56,7 @@ public class Player {
         return hasWon;
     }
 
+    public boolean checkLose() {
+        return hasLost;
+    }
 }
