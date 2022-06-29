@@ -6,8 +6,7 @@ import com.apps.util.Console;
 import java.util.Scanner;
 
 import static game.AsciiArts.asciiArtQuit;
-import static game.MusicPlayer.playFireMusic;
-import static game.MusicPlayer.stopFireMusic;
+import static game.MusicPlayer.*;
 
 
 class ActionParser {
@@ -73,7 +72,9 @@ class ActionParser {
                     case "drop":
                         validInput = Moves.drop(player, moveString[1]);
                     case "unmute":
-                        playFireMusic();
+                        if (!clip.isRunning()){
+                            playFireMusic();
+                        }
                         break;
                     case "mute":
                         stopFireMusic();
